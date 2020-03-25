@@ -1,0 +1,122 @@
+p {
+    color: pink;
+    color: gray;
+    /*textul va avea ultima culoare scrisa in css*/
+    font-weight: bold; /* font bold */
+}
+body { 
+    color: blueviolet;
+    padding-left: 50px;
+    padding-right: 5px;
+    background-image: url('http://irinaciocan.ro/tehnici_web/imagini/mazgaleala.png'),url('http://www.irinaciocan.ro/tehnici_web/imagini/carouri.png'), url('http://irinaciocan.ro/imagini/gri.png'); 
+    background-repeat: repeat, repeat, repeat-y;
+    background-position: 0px 0px, -10px -10px, 40px 0px;
+    
+}
+h1 {
+    color: red;
+    text-decoration: underline;
+}
+h2{
+    color: blueviolet;
+    font-style: italic;
+    padding-left: 67px;
+}
+p {
+    color: green;
+    font-family: 'Comic Sans MS';
+} 
+h3+p {
+    border-color: fuchsia;
+    border: 2px dotted blue;
+}
+/*9*/
+h3~p{
+    background-image: url('http://irinaciocan.ro/tehnici_web/imagini/backgr_pas3.png');
+    background-attachment: fixed;
+    color: rgb(0, 95, 76);
+}
+/*10*/
+.c1{
+    background-color: purple;
+}
+/*11*/
+.c2{
+    font-style: italic;
+    background-color: yellow;
+    text-decoration: underline, overline;
+}
+/*12*/
+.c3
+{
+    font-variant: small-caps;
+    background-color: lime;
+}
+.c2, .c3{
+    font-style: normal;
+    background-color: rgb(220, 20, 60);
+}
+/*16*/
+#abc p{
+    box-shadow: red 10px 10px;
+}
+/*17*/
+#abc>p{
+    box-shadow: green 10px 10px 5px;
+    text-shadow: red 3px 3px;
+}
+/*18*/
+ol li{
+    list-style-type: lower-alpha;
+    border: ridge 4px purple;
+    border-top-right-radius: 10px ;
+    border-top-left-radius: 10px;
+}
+/*19*/
+p[title]:first-letter{
+    font-size: 20px;
+}
+/*20*/
+p[title="altceva"]:hover{
+    color: pink;
+}
+/*21*/
+p[title="altceva"]:hover+*{
+    visibility: hidden;
+}
+/*22*/
+p+p /*p:nth-of-tyoe(n+2)*/{
+    text-indent: 25px;
+}
+/*23*/
+ol li:nth-child(even) /*:nth-child(2n)*/{
+    text-align: right;
+}
+/*24*/
+section: :first-of-type{
+    border-top: green 4px dashed;
+    border-left: green 4px dashed;
+}
+/*25*/
+section>:first-child::after{
+content: "primul";
+}
+/*26*/
+h1::before, h2::before, h3::before{
+    content: url(http://www.irinaciocan.ro/imagini/foarte_zambaret.png);
+}
+/*27*/
+p:not([class]):not([id]){
+    cursor: crosshair;
+}
+/*28*/
+*{
+    outline/*border care nu impinge contentul*/: 2px blue dashed;
+}
+/*29!!!!!!!!!*/
+section #abc:hover>section>p:not([title])+p{
+    letter-spacing: 15px;
+}
+/*30*/
+
+

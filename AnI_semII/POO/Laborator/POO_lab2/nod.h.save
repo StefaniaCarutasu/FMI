@@ -1,0 +1,11 @@
+#ifndef _NOD_H_
+#define _NOD_H_
+class nod
+{
+    int info;
+    nod *next;
+    public:
+    nod();
+    
+};
+#endif // _NOD_H_

@@ -1,0 +1,12 @@
+#include "nod.h"
+
+nod::nod()
+{
+    info=0;
+        next=NULL;
+}
+
+nod::~nod()
+{
+    //dtor
+}

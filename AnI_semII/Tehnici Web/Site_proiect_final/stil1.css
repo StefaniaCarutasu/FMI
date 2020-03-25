@@ -1,0 +1,189 @@
+.Titlu_pagina{
+  position: relative;
+  text-align: center;
+  height: 170px;
+  z-index: -1;
+  display: inline;
+}
+body
+{
+  background-color:  #1a1a1a;
+}
+/*CSS meniu*/
+/*container de navigare */
+.navbar {
+  overflow: hidden;
+  font-family: Arial;
+  display: inline-block;
+  text-align: center;
+
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+;
+}
+
+/* buton dropdown */
+.dropdown .buton_dropdown {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* vertical pe telefon */
+  margin: 0;
+}
+
+/* background roz */
+.navbar a:hover, .dropdown:hover .buton_dropdown {
+  background-color: rgb(228, 139, 139);
+}
+
+/* continut dropdown (ascuns) */
+.dropdown-content {
+  background-color: #f9f9f9;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* link-uri in dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* fundal gri la trecerea cu cursorul */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* dropdown menu la trecerea cu cursorul */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.txt_stg {
+  color: blanchedalmond;
+  position: relative;
+  text-align: left;
+  display: block;
+  float: left;
+  display: inline-block;
+  width: 33% ;
+
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  position: relative;
+  align-content: right ;
+}
+
+/* 3 coloane */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.container_img {
+  position: relative;
+  width: 100%; /* Maximum width */
+  margin: 0 auto; /* Center it */
+  height: 50%;
+}
+
+.container_img .continut {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(29, 26, 26); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+  column-fill: auto;
+
+}
+footer
+{
+  text-align: center;
+  color: blanchedalmond;
+  font-size: 65%;
+}
+/* Responsive 1 singura coloana */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+  .txt_stg {
+      width: 100%;
+    }
+    .cautare {
+        width: 100%;
+        align-items: center;
+        text-indent: 4%;
+    }
+    .Titlu_pagina{
+        height: 200px;
+    }
+    .dropdown{
+      width: 100%;
+    }
+    .buton_dropdown{
+      width: 100%;
+    align-items: left;
+    float: none;
+    display: block;
+    text-align: left;
+    }
+}
+
+/* Responsive o coloana */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;}
+  .cautare {
+    text-indent: 4%;
+  }
+  .dropdown{
+    width: 100%;
+    display: block;
+  }
+  .buton_dropdown{
+    width: 100%;
+    align-items: left;
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  }

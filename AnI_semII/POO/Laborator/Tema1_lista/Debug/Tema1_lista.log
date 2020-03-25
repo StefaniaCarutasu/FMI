@@ -1,0 +1,3 @@
+﻿  Tema1_lista.cpp
+C:\Users\STEFANIA\Desktop\Facultate\AnI_semII\POO\Laborator\Tema1_lista\Tema1_lista.cpp(136): warning C4715: 'lista::cautare': not all control paths return a value
+  Tema1_lista.vcxproj -> C:\Users\STEFANIA\Desktop\Facultate\AnI_semII\POO\Laborator\Tema1_lista\Debug\Tema1_lista.exe

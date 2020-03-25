@@ -1,0 +1,19 @@
+#include <iostream>
+#include<vector>
+#include<st
+using namespace std;
+class student
+{   string nume, prenume, id_std;
+    vector<string>specializari;
+    float medie_bac;
+    static int nr_std;
+    public:
+        student(string, string, float, vector<string>);
+        bool esteInscris(string);
+        string getId();
+};
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}

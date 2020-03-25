@@ -1,0 +1,87 @@
+//Lab 5
+->Natural join:
+SELECT last_name, job_id, job_title
+FFROM employees
+NATURAL JOIN jobs; 
+ --este indicata utilizarea join-ului clasic pt ca s-ar putea sa apara duplicate
+ 
+ 
+select last_name, department_name, location_id
+from employees e, deppartments d
+where e.depatment_id=d.depatment_id; //se ia intersectia celor 2 tabele
+
+
+--Sql3-clauza on
+select last_name, department_name, location_id
+from employees e JOIN deppartments d ON(e.department_id=d.department_id);
+ --Sql3- using
+ select last_name, department_name, location_id
+from employees  JOIN deppartments USING(depatment_id) //merge daca coloana are fix acelasi nume in ambele tabele
+
+--dorim sa afisam angajatii fara departament -> (+)
+
+select last_name, department_name, location_id
+from employees e, deppartments d
+where e.depatment_id=d.depatment_id (+);
+
+--dorim sa afisam angajatii chiar daca au sau nu departament
+
+select last_name, department_name, location_id
+from employees e LEFT JOIN departments d ON(e.depatment_id=d.depatment_id);
+
+--dorim sa afisam toate departamentele chiar daca au sau nu angajati
+select last_name, department_name, location_id
+from employees e RIGHT JOIN departments d ON(e.depatment_id=d.depatment_id);
+
+--dorim sa afisam angajatii chiar daca au sau nu departament si dorim sa afisam toate departamentele chiar daca au sau nu angajati
+select last_name, department_name, location_id
+from employees e FULL JOIN departments d ON(e.depatment_id=d.depatment_id);
+
+
+--EXERCITII:
+
+1. cerere pt a afis numele, luna si anul angajarii pt toti angajatii din acelasi dep cu Gates si al caror nume contine 'a' si fara Gates
+
+SELECT ang.last_name, to_char(hire_date,'month-yyyy'), gates.last_name
+from employees ang join employees gates on (e.depatment_id=d.depatment_id)
+where initcap(gates.last_name)='Gates' and lower(ang.last_name) like '%a%' and initcap(ang.last_name) != 'Gates';
+
+2.sa se afiseze codul si numele ang care lucreaza in acelasi departament cu cel putin angajat al carui nume contine litera "t"
+Se vor afisa de asemenea codul si numele dep respectiv. Rez va fi ordonat alfabetic
+
+select employee_id, last_name, d.department_id, department_name
+from employees e join employees t on (e.department_id=t.department_id)
+				join departaments d on (e.department_id=d.department_id)
+where lower(t.last_name) like '%t%'
+order by e.last_name
+
+3. sa se fis numele salariu titlul job ului orasul si tara in care lucreaza angajatii condusi direct de King
+
+select
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
