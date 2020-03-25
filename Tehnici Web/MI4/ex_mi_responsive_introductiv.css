@@ -1,0 +1,8 @@
+@media screen and (max-width:400px)
+{
+   /* -1- */
+    ul.menu>li
+    {
+        width:100%;
+    }
+}

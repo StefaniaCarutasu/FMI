@@ -1,0 +1,42 @@
+/* -1- */
+div.container#c0 
+{
+    vertical-align: middle;
+    text-align: center;
+}
+
+#c0 .dv 
+{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+/* -2- */
+#c1 .dv
+{
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+/* -3- */
+div.container#c2
+{
+    display: flex;
+}
+#c2 .dv
+{
+    margin: auto;
+    vertical-align: center;
+    text-align: center;
+}
+
+/* -4- */
+div.container#c3
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+

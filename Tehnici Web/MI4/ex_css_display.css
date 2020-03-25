@@ -1,0 +1,25 @@
+div
+{
+    display: inline;
+}
+
+span
+{
+    background-color: red;
+    width: 70px;  /*width si height nu se aplica deoarece sunt afisate inline si restul elementelor nu au acelasi width si height*/
+    height: 50px;
+}
+
+#a span 
+{
+    display: block;  /*acum se aplica width si height*/
+}
+
+#b span
+{
+    display: inline-block; /*se aplica width si height*/
+}
+ #c span
+ {
+    display: none;
+ }
