@@ -1,0 +1,68 @@
+--18. Sa se afiseze numele angajatilor, codul departamentului si codul job-ului
+--salariatilor al caror departament se afla în Toronto.
+
+select last_name, department_id, job_id
+from employees
+where department_id in (select department_id
+                        from departments d join locations l on (d.location_id=l.location_id)
+                        where  initcap(l.city)='Toronto');
+
+--9. Pentru fiecare sef, sa se afiseze codul sau si salariul celui mai prost platit
+--subordonat. Se vor exclude cei pentru care codul managerului nu este cunoscut. De
+--asemenea, se vor exclude grupurile în care salariul minim este mai mic de 1000$.
+--Sortati rezultatul în ordine descrescatoare a salariilor.
+select m.manager_id, min(e.salary)
+from employees e join employees m on (e.manager_id = m.manager_id)
+group by m.manager_id
+having m.manager_id is not null and min(e.salary) > 1000;
+
+
+--8. Sa se afiseze codul si numele angajatilor care au salariul mai mare decât salariul
+--mediu din firma. Se va sorta rezultatul în ordine descrescatoare a salariilor.
+
+select employee_id, last_name
+from employees
+where salary>(select avg(salary)
+                from employees)
+order by salary desc;
+
+--10. Pentru departamentele in care salariul maxim depaseste 3000$, sa se obtina codul,
+--numele acestor departamente si salariul maxim pe departament.
+
+select d.department_id, d.department_name, max(e.salary)
+from departments d join employees e on (e.department_id=d.department_id)
+group by d.department_id, d.department_name
+having max(e.salary)>3000;
+
+
+--11. Care este salariul mediu minim al job-urilor existente? Salariul mediu al unui job va
+--fi considerat drept media aritmetica a salariilor celor care îl practica.
+
+select min(avg(salary))
+from employees
+group by job_id;
+
+--12. Sa se afiseze maximul salariilor medii pe departamente.
+select max(avg(salary))
+from employees
+where department_id is not null
+group by department_id;
+
+--13. Sa se obtina codul, titlul si salariul mediu al job-ului pentru care salariul mediu
+--este minim. 
+select j.job_id, j.job_title, avg(e.salary)
+from jobs j join employees e on (j.job_id=e.job_id)
+group by j.job_id, j.job_title
+having avg(e.salary)=(select min(avg(salary))
+                    from employees
+                    group by job_id);
+                    
+--14. Sa se afiseze salariul mediu din firma doar daca acesta este mai mare decât 2500.
+--(clauza HAVING fara GROUP BY)
+select avg(salary)
+from employees
+having avg(salary)>2500;
+
+
+
+
