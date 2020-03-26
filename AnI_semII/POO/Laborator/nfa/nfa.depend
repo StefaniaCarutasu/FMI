@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1583676102 source:c:\users\stefania\desktop\facultate\ani_semii\poo\laborator\nfa\main.cpp
-	<iostream>
-	<map>
-	<string>
-	<set>
-	<fstream>
-
