@@ -1,0 +1,9 @@
+﻿  evenimentIR.cpp
+  evenimentRecurent.cpp
+  lab5.cpp
+C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\POO\Laborator\POO_Lab5\lab5\lab5.cpp(61,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\POO\Laborator\POO_Lab5\lab5\lab5.cpp(67,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\POO\Laborator\POO_Lab5\lab5\lab5.cpp(73,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\POO\Laborator\POO_Lab5\lab5\lab5.cpp(78,35): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  lab5.vcxproj -> C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\POO\Laborator\POO_Lab5\lab5\Debug\lab5.exe
