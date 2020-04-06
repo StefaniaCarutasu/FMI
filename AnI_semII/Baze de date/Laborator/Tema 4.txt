@@ -1,0 +1,45 @@
+--Ex1 : Sa se afiseze codul, numele departamentului si numarul de angajati care
+--lucreaza in acel departament pentru departamentul care are numarul minim de angajati.
+select d.department_id, department_name, count(employee_id)
+from departments d join employees e on (d.department_id=e.department_id)
+where e.department_id is not null
+group by d.department_id, department_name
+having count(employee_id) = ( select min(count(employee_id))
+                              from employees
+                              group by department_id);
+                                          
+--Ex2 : Sa se afiseze numele, salariul, titlul jobului, departamentul, orasul si tara in care
+--lucreaza angajatii condusi direct de „hunoldalexander”.
+select e.last_name, e.salary, j.job_title, d.department_name, city, c.country_name
+from employees e join jobs j on (e.job_id=j.job_id)join departments d on (e.department_id=d.department_id) join locations l on (l.location_id=d.location_id) join countries c on (c.country_id=l.country_id)
+where e.manager_id=(select employee_id
+                    from employees
+                    where concat(lower(last_name), lower(first_name)) = 'hunoldalexander');
+                    
+--Ex3 : Sa se afiseze numele, salariul, codul departamentului si salariul mediu din
+--departamentul respectiv.
+select last_name, salary, department_id, (select avg(salary) 
+                                                from employees e
+                                                where e.department_id=em.department_id)
+from employees em 
+group by department_id, last_name, salary;
+
+--Ex4 : Sa se afiseze codul, numele departamentului si numarul de angajati pentru
+--departamentele care au numar minim de angajati.
+select d.department_id, d.department_name, count(e.employee_id) Nr_minim
+from employees e join departments d on (e.department_id=d.department_id)
+group by d.department_name, d.department_id
+having count(employee_id)=(select min(count(employee_id))
+                          from employees
+                          group by department_id);
+                          
+--Ex5 : Sa se creeze o cerere prin care sa se afiseze numarul total de angajati si, din
+--acest total, numarul celor care au fost angajati în 1997, 1998, 1999 si 2000. Denumiti
+--capetele de tabel in mod corespunzator. (Laborator 4 – exercitiul 23)
+
+select count(employee_id) "Total angajati",
+       count(decode(to_char(hire_date,'yyyy'),1997,employee_id)) "Angajati in 1997",
+       count(decode(to_char(hire_date,'yyyy'),1998,employee_id)) "Angajati in 1998",
+       count(decode(to_char(hire_date,'yyyy'),1999,employee_id)) "Angajati in 1999",
+       count(decode(to_char(hire_date,'yyyy'),2000,employee_id)) "Angajati in 2000"
+from employees;
