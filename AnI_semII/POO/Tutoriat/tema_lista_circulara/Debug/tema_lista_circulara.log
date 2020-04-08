@@ -1,0 +1,3 @@
+﻿  lista.cpp
+C:\Users\STEFANIA\Desktop\Facultate\AnI_semII\POO\tema_lista_circulara\lista.cpp(114): warning C4715: 'lista::cautare': not all control paths return a value
+  tema_lista_circulara.vcxproj -> C:\Users\STEFANIA\Desktop\Facultate\AnI_semII\POO\tema_lista_circulara\Debug\tema_lista_circulara.exe

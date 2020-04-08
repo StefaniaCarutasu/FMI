@@ -1,2 +1,3 @@
 ﻿  NFA_to_DFA.cpp
-C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\LFA\NFA_to_DFA\NFA_to_DFA.cpp(122,39): error C3867: 'NFA::getInitialState': non-standard syntax; use '&' to create a pointer to member
+C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\LFA\NFA_to_DFA\NFA_to_DFA.cpp(161,12): warning C4018: '<': signed/unsigned mismatch
+  NFA_to_DFA.vcxproj -> C:\Users\STEFANIA\Desktop\Facultate\FMI\AnI_semII\LFA\NFA_to_DFA\Debug\NFA_to_DFA.exe
