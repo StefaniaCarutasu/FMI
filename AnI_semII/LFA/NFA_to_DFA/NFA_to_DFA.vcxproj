@@ -149,6 +149,9 @@
   <ItemGroup>
     <ClCompile Include="NFA_to_DFA.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="nfa.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

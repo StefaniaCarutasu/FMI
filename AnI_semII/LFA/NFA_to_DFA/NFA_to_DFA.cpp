@@ -1,10 +1,12 @@
 #include<iostream>
+#include<fstream>
 #include<map>
 #include<set>
 #include<vector>
 #include<string>
-
 using namespace std;
+ifstream f("nfa.txt");
+
 class DFA
 {
 	vector<string> QDFA, FDFA;
@@ -26,6 +28,9 @@ public:
 	void setF(vector<string> f) { this->FDFA = f; }
 	void setSigma(set<char> s) { this->SigmaDFA = s; }
 	void setInitialState(set<int> q) { this->q0DFA = q; }
+	set<int> getQ0() { return this->q0DFA; }
+	vector<string> getQDFA() { return this->QDFA; }
+	vector<string> getFDFA() { return this->FDFA; }
 	friend class NFA;
 };
 class NFA
@@ -57,56 +62,56 @@ public:
 };
 
 
-istream& operator >> (istream& in, NFA& M)
+istream& operator >> (istream& f, NFA& M)
 {
 	int noOfStates;
-	in >> noOfStates;
+	f >> noOfStates;
 	for (int i = 0; i < noOfStates; ++i)
 	{
 		int q;
-		in >> q;
+		f >> q;
 		M.Q.insert(q);
 	}
 
 	int noOfLetters;
-	in >> noOfLetters;
+	f >> noOfLetters;
 	for (int i = 0; i < noOfLetters; ++i)
 	{
 		char ch;
-		in >> ch;
+		f >> ch;
 		M.Sigma.insert(ch);
 	}
 
 	int noOfTransitions;
-	in >> noOfTransitions;
+	f >> noOfTransitions;
 	while (noOfTransitions)
 	{
 		int s, nr_trans;
 		char ch;
-		in >> s >> ch >> nr_trans;
+		f >> s >> ch >> nr_trans;
 		for (int i = 0; i < nr_trans; ++i)
 		{
 			int x;
-			in >> x;
+			f >> x;
 			M.delta[{s, ch}].insert(x);
 		}
 		noOfTransitions -= nr_trans;
 	}
 	int x;
-	in >> x;
+	f >> x;
 	M.q0.insert(x);
 
 
 	int noOfFinalStates;
-	in >> noOfFinalStates;
+	f >> noOfFinalStates;
 	for (int i = 0; i < noOfFinalStates; ++i)
 	{
 		int q;
-		in >> q;
+		f >> q;
 		M.F.insert(q);
 	}
 
-	return in;
+	return f;
 }
 
 DFA NFA::nfaToDFA()
@@ -114,7 +119,8 @@ DFA NFA::nfaToDFA()
 	DFA aux;
 	aux.setInitialState(this->getInitialState());
 	vector<string> coada, QLocal;
-	coada.push_back(to_string(*this->getQ().begin()));
+	for(auto& i: this->getQ())
+		coada.push_back(to_string(i)); //adaug in coada prima stare a NFA-ului
 	map<pair<string, char>, set<int>> delta_local;
 
 	for (auto& i : this->getDelta())
@@ -130,23 +136,27 @@ DFA NFA::nfaToDFA()
 			{
 				for (auto& i : delta_local)
 				{
-
-					if (i.first.first == coada[0] && to_string(i.first.second) == &lit)
+					if (i.first.first == coada[0] && to_string(i.first.second) == to_string(lit))
 					{
-						string st = "";
-						for (auto& it : i.second)
-							st += to_string(it) + ","; //o fac sa fie o stare de sine statatoare
-						bool ok = 0;
-						for (auto& j : coada)
+						string st = ""; //daca ajunge in mai multe stari atunci fac un string cu toate
+						if (i.second.size() > 1)
+						{
+							for (auto& it : i.second)
+								st += to_string(it) + ","; //o fac sa fie o stare de sine statatoare
+						}
+						else st = to_string(*i.second.begin());
+						int ok = 0;
+						for (auto& j : coada) //verific daca se afla deja in coada
 							if (j == st)
 								ok = 1;
 						if (ok == 0)
 							coada.push_back(st); //adaugam in coada daca nu era deja
+						
 					}
 				}
 			}
 		
-			else  //daca e stare formata dintr-o multime de stari
+			else  //daca e stare formata dintr-o multime de stari lungimea stringului va fi sigur >1
 			{
 				set<int> multime;
 				int l = 0;
@@ -162,7 +172,7 @@ DFA NFA::nfaToDFA()
 					//repet procesul de la stare simpla dar adaug la coada de abia la final
 					for (auto& i : delta_local)
 					{
-						if (i.first.first == coada[0] && to_string(i.first.second) == &lit)
+						if (i.first.first == coada[0] && to_string(i.first.second) == to_string(lit))
 							for (auto& a : i.second)
 								multime.insert(a); //adaug la set toate starile in care se ajunge cu litera curenta din fiecare stare din multime
 					}
@@ -170,18 +180,24 @@ DFA NFA::nfaToDFA()
 				}
 				delta_local[{coada[0], lit}] = multime;
 				string stare = "";
-				for (auto& it : multime)
-					stare += to_string(it) + ","; //o fac sa fie o stare de sine statatoare
+				if (multime.size() > 1)
+					for (auto& it : multime)
+						stare += to_string(it) + ","; //o fac sa fie o stare de sine statatoare
+				else
+					for (auto& it : multime)
+						stare += to_string(it);
 				bool ok = 0;
 				for (auto& j : coada)
 					if (j == stare)
 						ok = 1;
 				if (ok == 0)
+				{
 					coada.push_back(stare); //adaugam in coada daca nu era deja
+				}
 			}		
 		}
 
-		QLocal.push_back(*coada.begin());  //inainte sa o sterg din coada o adaug la strile locale
+		QLocal.push_back(*coada.begin());//inainte sa o sterg din coada o adaug la strile locale
 		coada.erase(coada.begin());
 	}
 	//dupa ce am creat delta pt dfa acum cream F
@@ -211,13 +227,21 @@ DFA NFA::nfaToDFA()
 int main()
 {
 	NFA M;
-	cin >> M;
+	f >> M;
 	DFA D;
 	D = M.nfaToDFA();
+	cout << "Starea initiala este: ";
+	for (auto& i : D.getQ0())
+		cout << i << " ";
+	cout << '\n';
+	cout << "Starile sunt: ";
+	for (auto& i : D.getQDFA())
+		cout << i << "  ";
+	cout << '\n';
 	cout << "Automatul devine:\n";
 	for (auto& i : D.getDelta())
 	{
-		cout << i.first.first << "+" << i.first.second << "->" << i.second<<'\n';
+		cout << i.first.first << "+" << i.first.second << "->" << i.second<<'\n';  //afisez, pe rand, tranzitiile
 	}
 	return 0;
 }
