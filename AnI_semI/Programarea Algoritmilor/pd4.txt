@@ -1,0 +1,28 @@
+d={} ; b=[]
+lin=input() ; lin=lin.split()
+n=int(lin[0])
+k=int(lin[1])
+for i in range(n):
+    z=[0]*(k+1)
+    b.append(z)
+for i in range(0,n):
+    lin=input() ; lin=lin.split()
+    d[i]=lin
+
+for el in d[0]:
+    b[0][int(el)]=1+int(d[0].index(el))
+
+for i in range(1,n):
+    for el in d[i]:
+        for ik in range(0,k-int(el)+1):
+            if b[i-1][ik]!=0: b[i][ik+int(el)]=int(d[i].index(el))+1
+
+print(b[n-1][k], "\ndrumul este: ")
+
+if b[n-1][k]!=0:
+    ix=b[n-1][k]
+    for i in range(n-1,0,-1):
+        print(d[i][ix-1])
+        k=k-int(d[i][ix-1])
+        ix=b[i-1][k]
+print(d[0][ix-1])

@@ -1,0 +1,83 @@
+#Pb7
+
+.data
+txt: .asciiz "Stefi trece la algebra"
+voc: .asciiz "aeiouAEIOU"
+
+.text
+main:
+la $t0, str
+subu $sp, $sp, 4
+sw $t0, 0($sp)
+jal afiseaza_vocale
+addu $sp, $sp, 4
+li $v0, 10
+syscall
+este_vocala:
+	subu $sp, $sp, 4
+	sw $fp, 0($sp)
+	addi $fp, $sp, 4
+	subu $sp, $sp, 4
+	sw $s0, 0($sp)
+	lb $s0, 0($fp)
+	li $t1, 0 # locatie memorie
+	lb $t2, vocale($t1) # vocala
+	
+	for:
+		beqz $t2, nuvocala
+		beq $t2, $s0, evocala
+		addi $t1, $t1, 1
+		lb $t2, vocale($t1)
+		j for
+	
+	nuvocala:
+		li $v0, 0
+		j cont1
+		
+	evocala:
+		li $v0, 1
+		j cont1
+	
+	cont1:
+		lw $s0, -8($fp)
+		lw $fp, -4($fp)
+		addi $sp, $sp, 8
+		jr $ra
+
+afiseaza_vocale:
+	subu $sp, $sp, 4
+	sw $fp, 0($sp)
+	addi $fp, $sp, 4
+	subu $sp, $sp, 4
+	sw $ra, 0($sp)
+	subu $sp, $sp, 4
+	sw $s0, 0($sp)
+	lw $s0, 0($fp)
+	lb $t0, 0($s0) # caracter sir
+	beqz $t0, exit
+	subu $sp, $sp, 4
+	sw $t0, 0($sp)
+	jal este_vocala
+	addi $sp, $sp, 4
+	beq $v0, 1, vocala
+	j cont
+	
+	vocala:
+		move $a0, $t0
+		li $v0, 11
+		syscall
+		j cont
+	
+	cont:
+		addi $s0, $s0, 1
+		subu $sp, $sp, 4
+		sw $s0, 0($sp)
+		jal afiseaza_vocale
+		addi $sp, $sp, 4
+	
+	exit:
+		lw $s0, -12($fp)
+		lw $ra, -8($fp)
+		lw $fp, -4($fp)
+		addi $sp, $sp, 12
+		jr $ra

@@ -1,0 +1,45 @@
+.data
+	n: .word 123456
+.text
+#cifre_pare(n)
+main:
+	lw $v0, n
+	subu $sp, $sp, 4
+	sw $v0, 0($sp) #punem n
+	jal cifre_pare
+	addu $sp, $sp, 4
+	li $v0, 10
+	syscall
+	#procedura
+cifre_pare:
+
+	subu $sp, $sp, 4
+	sw $fp, 0($sp)
+	addi $fp, $sp, 4
+	subu $sp, $sp, 4
+	sw $s0, 0($sp)
+	lw $s0, 0($fp) # n
+	while:
+	   beqz $s0, exit
+	   rem $t0, $s0, 2 # restul impartirii la 2
+	   beqz $t0, para
+	   j continuare
+	   para:
+	   rem $t1, $s0, 10 
+	   move $a0, $t1
+	   li $v0, 1
+	   syscall
+	   la $a0, ' '
+	   li $v0, 11
+	   syscall
+	   continuare:
+	   divu $s0, $s0, 10
+	   j while
+	exit:
+	   lw $s0, -8($fp)
+	   lw $fp, -4($fp)
+       addu $sp, $sp, 8
+	   jr $ra
+	   
+	
+

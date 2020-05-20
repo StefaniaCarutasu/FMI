@@ -1,0 +1,120 @@
+--Laborator 1
+select first_name Prenume, last_name Nume, job_id
+from employees
+where manager_id is not NULL
+order by first_name;
+
+select last_name, salary, commission_pct
+from employees
+order by salary desc, commission_pct desc;
+
+select last_name Nume
+from employees
+where upper(last_name) like '__A%';
+
+select last_name
+from employees
+where upper(last_name) like '%L%L%' and (manager_id=102 or department_id=30);
+
+select last_name Nume, job_id Job, salary Salariu
+from employees
+where (upper(job_id) like '%CLERK%' or upper(job_id) like '%REP%') and salary not in (1000, 2000, 3000);
+
+--Laborator 2
+--3.
+select employee_id, last_name, department_id
+from employees
+where trim(UPPER(first_name))='STEVEN';
+
+--2.
+select initcap(first_name) Prenume, upper(last_name) Nume,length(last_name)"Lungime nume"
+from employees
+where upper(last_name) like 'M%' or upper(last_name) like 'J%' or upper(last_name) like '__A%';
+
+--4
+select employee_id Cod, last_name Nume, length(last_name)"Lungimea numelui", instr(lower(last_name), 'a') "Pozitia"
+from employees
+where lower(last_name) like '%e';
+
+--Join
+--16
+select employee_id, department_name
+from employees e join departments d on (e.department_id=d.department_id);
+
+select employee_id, department_name
+from employees e, departments d
+where e.department_id=d.department_id;
+
+select employee_id, department_name
+from employees e join departments d using(department_id);
+
+--17
+select d.department_id, j.job_title
+from employees e join departments d on(e.department_id=d.department_id)
+                 join jobs j on(e.job_id=j.job_id)
+where d.department_id=30;
+
+--18
+select e.last_name, d.department_name, d.location_id
+from employees e join departments d on(e.department_id=d.department_id)
+where commission_pct is not NULL;               
+
+--19
+select e.last_name, j.job_title, d.department_name
+from employees e join departments d on(e.department_id=d.department_id)
+                join jobs j on(e.job_id=j.job_id)
+                join locations l on (d.location_id=l.location_id)
+where upper(l.city)='OXFORD';
+
+--20
+select ang.employee_id Ang#, ang.last_name Angjat, mg.employee_id Mgr#, mg.last_name Manager
+from employees ang, employees mg
+where ang.manager_id=mg.employee_id;
+
+--21 ????????????
+select ang.employee_id Ang#, ang.last_name Angjat, mg.employee_id Mgr#, mg.last_name Manager
+from employees ang, employees mg
+where ang.manager_id=mg.employee_id or mg.manager_id=NULL;
+
+--22
+select ang.last_name "Nume angajat", ang.department_id, coleg.last_name "Nume colegi"
+from employees ang, employees coleg
+where ang.department_id=coleg.department_id
+order by ang.last_name;
+
+--23
+select e.last_name, e.job_id, j.job_title, d.department_name, e.salary
+from employees e full join departments d on (e.manager_id=d.manager_id)
+                full join jobs j on (j.job_id=e.job_id);
+--24
+select e.last_name, e.hire_date
+from employees e, employees g
+WHERE e.hire_date > g.hire_date and g.last_name like 'Gates';
+
+--25
+select e.last_name Angajat, e.hire_date Data_ang, m.last_name Manager, m.hire_date Data_mgr
+from employees e join employees m on(e.manager_id=m.employee_id)
+order by m.employee_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

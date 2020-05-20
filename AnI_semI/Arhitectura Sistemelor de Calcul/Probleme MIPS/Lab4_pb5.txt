@@ -1,0 +1,44 @@
+#Pb5
+
+.data
+	n: .space 4
+.text
+main:
+li $v0, 5
+syscall
+sw $v0, n
+subu $sp, $sp, 4
+sw $v0, 0($sp)
+jal f
+move $a0, $v0
+li $v0, 1
+syscall
+li $v0, 10
+syscall
+f:
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+addu $fp, $sp, 4
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+lw $v0, 0($fp) # n
+subu $sp, $sp, 4
+sw $v0, 0($sp)
+jal g
+addu $sp, $sp, 4
+mul $v0, $v0, 2 # 2*(x+1)
+lw $ra, -8($fp)
+lw $fp, -4($fp)
+addu $sp, $sp, 12
+jr $ra
+g:
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+addi $fp, $sp, 4
+lw $v0, 0($fp) # x
+addi $v0, $v0, 1
+lw $fp, -4($fp)
+jr $ra
+
+
+

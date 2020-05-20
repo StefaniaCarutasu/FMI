@@ -1,0 +1,7 @@
+6
+Popescu Ion 39 7800
+Marcu Vlad 34 8300
+Carutasu Stefania 20 9000
+Popescu Maria 25 6000
+Ionescu Ana 57 6540
+Georgescu Miruna 45 4600

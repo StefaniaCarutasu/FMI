@@ -1,0 +1,31 @@
+"""
+#Problema 5
+def negative_pozitive(L):
+    lp=[]
+    li=[]
+    for i in L:
+        if i%2==0:
+            lp.append(i)
+        else:
+            li.append(i)
+    return lp,li
+v=[int(x) for x in input().split()]
+print(negative_pozitive(v))
+
+#Problema 6- modul
+import lab4_1
+n=int()
+v=[]
+lab4_1.citire(n, v)
+poz=lab4_1.valpoz(v)
+"""
+import heapq
+
+H = [21,1,45,78,3,5]
+# Use heapify to rearrange the elements
+heapq.heapify(H)
+print(H)
+heapq.heappush(H,8)
+print(H)
+heapq.heapify(H)
+print(H)

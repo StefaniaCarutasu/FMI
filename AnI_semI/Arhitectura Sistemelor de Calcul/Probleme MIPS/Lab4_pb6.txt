@@ -1,0 +1,79 @@
+#Pb6
+
+.data
+	v: .space 400
+	n: .space 4
+.text
+main:
+li $v0, 5
+syscall
+sw $v0, n
+li $t0, 0 #i=0
+move $t1, $v0
+mul $t1, $t1, 4
+
+citire_vector:
+beq $t0, $t1, iesire
+li $v0, 5
+syscall
+sw $v0, v($t0)
+addu $t0, $t0, 4
+j citire_vector
+
+iesire:
+divu $t1, $t1, 4
+subu $sp, $sp, 4
+sw $t1, 0($sp) #n pe stiva
+subu $sp, $sp, 4
+la $t0, v
+sw $t0, 0($sp)# vector pe stiva
+jal modifica
+#se intoarce din proc
+addu $sp, $sp, 8
+li $t0, 0 #i=0
+lw $t1, n
+mul $t1, $t1, 4 #n*=4
+
+afisare_vector:
+beq $t0, $t1, iesire1 #while i<n
+lw $a0, v($t0)
+li $v0, 1
+syscall
+la $a0, ' '
+li $v0, 11
+syscall
+addu $t0, $t0, 4
+j afisare_vector
+
+iesire1:
+li $v0, 10
+syscall
+
+
+modifica:
+subu $sp, $sp, 4
+sw $fp, 0($sp) #$fp pe stiva
+addu $fp, $sp, 4 
+subu $sp, $sp, 4
+sw $s0, ($sp)
+lw $s0, 0($fp) # v
+subu $sp, $sp, 4
+sw $s1, 0($sp)
+lw $s1, 4($fp) # n
+li $t0, 0 #i
+
+for:
+beq $t0, $s1, exit #while i<n
+lw $t1, 0($s0) #$t1=v[0]
+addu $t1, $t1, 1 #v[0]+=1
+sw $t1, 0($s0)
+addu $s0, $s0, 4 #v+=4
+addu $t0, $t0, 1 #i+=1
+j for
+
+exit:
+lw $s1, -12($fp) 
+lw $s0, -8($fp)
+lw $fp, -4($fp)
+addu $sp, $sp, 12
+jr $ra
