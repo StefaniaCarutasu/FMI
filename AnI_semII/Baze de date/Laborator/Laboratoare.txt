@@ -98,6 +98,350 @@ order by m.employee_id;
 
 
 
+--Laborator 3
+--1
+select e.last_name, to_char(e.hire_date, 'month YYYY')
+from employees e right outer join employees g on(e.department_id=g.department_id)
+where g.last_name like '%Gates%' and lower(e.last_name) like '%a%' and e.last_name != g.last_name;
+
+--2
+select emp.employee_id, emp.last_name
+from employees emp join employees e on (emp.department_id=e.department_id)
+where e.last_name like '%t%';
+
+--3
+select e.last_name, e.salary, j.job_title, l.city, c.country_name
+from employees e join employees K on (e.manager_id=K.employee_id)
+                 join jobs j on (j.job_id=e.job_id)
+                 join departments d on (e.department_id=d.department_id)
+                 join locations l on (d.location_id=l.location_id)
+                 join countries c on (l.country_id=c.country_id)
+where K.last_name like '%King%';
+
+--4
+select d.department_id, department_name, last_name, job_id, to_char(salary, '$99,999.000')
+from employees e join departments d on (e.department_id=d.department_id)
+where lower(department_name) like '%ti%'
+order by last_name;
+
+--6
+select department_id
+from employees
+where lower(last_name) like '%re%' or job_id='SA_REP'
+union
+select department_id
+from departments;
+
+--7
+select department_id
+from employees
+where lower(last_name) like '%re%' or job_id='SA_REP'
+union all
+select department_id
+from departments;
+
+--8
+--v1
+select department_id
+from departments
+minus
+select department_id
+from employees;
+--v2
+select department_id
+from departments
+where department_id not in(select distinct nvl(department_id, 0)
+                           from employees);
+
+--9
+select department_id
+from employees
+where upper(job_id)='HR_REP'
+intersect
+select department_id
+from departments
+where lower(department_name) like '%re%';
+
+--10
+select last_name, hire_date
+from employees
+where hire_date>(select hire_date
+                 from employees
+                 where initcap(last_name)='Gates'); 
+            
+--11
+select last_name, salary
+from employees
+where department_id in (select department_id
+                        from employees
+                        where initcap(last_name)='King');
+
+--se foloseste in pentru cazul in care a subcererea returneaza mai mult de un rezultat
+
+--12
+select last_name, salary
+from employees
+where manager_id=(select employee_id
+                  from employees
+                  where manager_id is NULL);
+                  
+--13
+select last_name, department_id, salary
+from employees
+where (department_id, salary) in (select department_id, salary
+                                  from employees
+                                  where commission_pct is not NULL);
+
+--14
+select employee_id Cod, last_name Nume, salary Salariu
+from employees
+where salary > (select avg(salary)
+               from employees);
+
+--15
+select last_name
+from employees
+where salary + salary*commission_pct > (select max(salary)
+                                        from employees
+                                        where upper(job_id) like '%CLERK%');
+
+--16
+select last_name, department_name, salary
+from employees e join departments d using (department_id)
+where commission_pct is null and e.manager_id in (select employee_id
+                                                  from employees
+                                                  where commission_pct is not null);
+
+--17
+select last_name, department_id, salary, job_id
+from employees 
+where (nvl(commission_pct, -1), salary) in (select nvl(commission_pct, -1), salary
+                                            from employees e join departments d on (e.department_id=d.department_id)
+                                                             join locations l on (l.location_id=d.location_id)
+                                            where initcap(l.city)='Oxford');
+                                            
+--18
+select last_name, e.department_id, e.job_id
+from employees e join departments d on (e.department_id=d.department_id)
+where d.department_id in (select department_id
+                          from departments d join locations l on (d.location_id=l.location_id)
+                          where initcap(l.city)='Toronto');
+
+--Laborator 4
+--2
+select max(salary) Maxim, min(salary) Minim, sum(salary) Suma, round(avg(salary)) Media
+from employees;
+
+--3
+select job_id, max(salary) Maxim, min(salary) Minim, sum(salary) Suma, round(avg(salary)) Media
+from employees
+group by job_id;
+
+--4
+select count(employee_id), department_id
+from employees
+where department_id is not null
+group by department_id;
+
+--5
+select distinct manager_id
+from employees
+where manager_id is not null;
+
+--6
+select max(salary)-min(salary) Diferenta
+from employees;
+
+--7
+select count(e.employee_id) Numar_ang, d.department_name Nume_dep, d.location_id Locatie, avg(e.salary) Salariu_mediu
+from employees e join departments d on (e.department_id=d.department_id)
+group by d.department_name, d.location_id;
+
+--8
+select employee_id, first_name, last_name
+from employees
+where salary>(select avg(salary) from employees)
+order by salary desc;
+
+--9. Pentru fiecare sef, sa se afiseze codul sau si salariul celui mai prost platit subordonat.
+--Se vor exclude cei pentru care codul managerului nu este cunoscut. De asemenea, se vor
+--exclude grupurile în care salariul minim este mai mic de 1000$. Sortati rezultatul în ordine
+--descrescatoare a salariilor.
+select manager_id, min(salary)
+from employees
+where manager_id is not null
+group by manager_id
+having min(salary)>=1000
+order by 2 desc;
+
+--10
+select d.department_id, department_name, max(salary)
+from employees e join departments d on (e.department_id=d.department_id)
+group by d.department_id, department_name
+having max(salary)>=3000;
+
+--11
+select min(avg(salary))
+from employees
+group by job_id;
+
+--12
+select round(max(avg(salary)))
+from employees
+group by department_id;
+
+--13
+select job_id, job_title, avg(salary)
+from employees join jobs using(job_id)
+group by job_id, job_title
+having avg(salary)=(select min(avg(salary))
+                    from employees
+                    group by job_id);
+
+--14
+select avg(salary)
+from employees
+having avg(salary)>=2500;
+
+--15
+select department_id, job_id, sum(salary)
+from employees
+group by department_id, job_id;
+
+--16
+--a
+select d.department_id, department_name, count(employee_id)
+from employees e join departments d on (e.department_id=d.department_id)
+group by d.department_id, department_name
+having count(employee_id)<4;
+--b
+select d.department_id, department_name, count(employee_id)
+from employees e join departments d on (e.department_id=d.department_id)
+group by d.department_id, department_name
+having count(employee_id)=(select max(count(employee_id))
+                           from employees
+                           group by department_id);
+
+--17 !!!!!!
+select first_name, last_name
+from employees
+where to_char(hire_date, 'day')=to_char((select max(count(to_char(hire_date, 'day')))
+                                from employees
+                                group by to_char(hire_date, 'day')));
+
+--18
+select count(department_id)
+from employees
+having count(*)>15;
+     
+--19
+select department_id, sum(salary) 
+from employees
+group by department_id
+having count(*)>10 and department_id != 30;
+
+--20 ??????????????
+select first_name, last_name
+from job_history j join employees e on (e.employee_id=j.employee_id)
+group by j.employee_id, first_name, last_name
+having count(j.employee_id)>2;
+
+--21
+select avg(commission_pct)
+from employees; --0.22
+SELECT AVG(commission_pct)
+FROM employees; --0.22
+SELECT SUM(commission_pct)/COUNT(*)
+FROM employees; --0.07
+
+--22
+--v1
+select job_id, sum(decode(department_id, 30, salary)) Dep30,
+               sum(decode(department_id, 50, salary)) Dep50,
+               sum(decode(department_id, 80, salary)) Dep80,
+               sum(salary) Total
+from employees
+group by job_id;
+
+--v2
+SELECT job_id, (SELECT SUM(salary)
+FROM employees
+WHERE department_id = 30
+AND job_id = e.job_id) Dep30,
+(SELECT SUM(salary)
+FROM employees
+WHERE department_id = 50
+AND job_id = e.job_id) Dep50,
+(SELECT SUM(salary)
+FROM employees
+WHERE department_id = 80
+AND job_id = e.job_id) Dep80,
+SUM(salary) Total
+FROM employees e
+GROUP BY job_id;
+
+--23
+select count(employee_id) Total,
+       count(decode(to_char(hire_date, 'yyyy'), '1997', employee_id)) "1997",
+       count(decode(to_char(hire_date, 'yyyy'), '1998', employee_id)) "1998",
+       count(decode(to_char(hire_date, 'yyyy'), '1999', employee_id)) "1999",
+       count(decode(to_char(hire_date, 'yyyy'), '2000', employee_id)) "2000"
+from employees;
+
+--24
+select d.department_id, department_name, a.suma
+from departments d, (select department_id, sum(salary) suma
+                    from employees
+                    group by department_id) a
+where d.department_id=a.department_id;
+
+--25
+select d.department_id, department_name, a.average
+from departments d, (select department_id, avg(salary) average
+                     from employees
+                     group by department_id) a
+where d.department_id=a.department_id;
+
+--26
+select last_name, salary, department_id averageSalary, noEmployees
+from employees join (select round(avg(salary)) averageSalary, department_id, count(employee_id) noEmployees
+                    from employees
+                    group by department_id)
+using(department_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
