@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+ @foreach (var article in ViewBag.Articles)
+{
+    <h1>@article.Title</h1>
+    <p>@article.Content</p>
+    <small>@article.Date.ToString()</small>
+    <p>@article.Category.CategoryName</p>
+
+    //linkuri catre alte pagini
+    <a href="/Articles/Show/@article.Id">Afisare articol</a>
+    <br />
+    <a href="/Articles/Edit/@article.Id">Editare articol</a>
+
+    <br />
+    <hr />
+    <br />
+}
+
+<a href="/Articles/New">Adaugare articol</a>
+<br />
+<hr />
+<a href="/Categories/Index">Vizualizare categorii</a>

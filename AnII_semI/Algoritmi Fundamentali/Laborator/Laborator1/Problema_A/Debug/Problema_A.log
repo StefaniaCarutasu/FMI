@@ -1,0 +1,8 @@
+﻿  Problema_A.cpp
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(56,23): warning C4018: '<=': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(59,27): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(99,23): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(101,27): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(112,23): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Problema_A.cpp(114,27): warning C4018: '<': signed/unsigned mismatch
+  Problema_A.vcxproj -> E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\Laborator\Problema_A\Debug\Problema_A.exe

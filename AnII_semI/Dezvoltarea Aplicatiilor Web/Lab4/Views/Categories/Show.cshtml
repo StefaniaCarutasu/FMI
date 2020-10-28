@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Afisare Categorie</h2>
+
+<h1>@ViewBag.Category.CategoryName</h1>
+<p>
+    Articole:
+    <br />
+    @foreach (var article in ViewBag.Articles)
+    {
+        <a href="/Articles/Show/@article.Id">@article.Title</a>
+        <br />
+    }
+</p>
+
+<br />
+<form method="post" action="/Categories/Delete/@ViewBag.Category.CategoryId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button type="submit">Stergere categorie</button>
+</form>
+
+<br />
+<a href="/Categories/Index">Inapoi la categorii</a>
+<br />
+<a href="/Categories/New">Adaugare categorie</a>
+<br />

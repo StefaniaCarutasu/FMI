@@ -1,0 +1,5 @@
+﻿  algoritmPrim.cpp
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmPrim\algoritmPrim.cpp(31,20): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmPrim\algoritmPrim.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmPrim\algoritmPrim.cpp(44,20): warning C4018: '<=': signed/unsigned mismatch
+  algoritmPrim.vcxproj -> E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmPrim\Debug\algoritmPrim.exe

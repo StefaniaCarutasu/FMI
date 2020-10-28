@@ -409,56 +409,566 @@ from employees join (select round(avg(salary)) averageSalary, department_id, cou
                     group by department_id)
 using(department_id);
 
+--lab 5
+--0a
+select last_name, salary, department_id
+from employees e
+where salary > (select avg(salary)  
+                from employees
+                where department_id=e.department_id);
+--0b
+select last_name, salary, e.department_id, department_name, sal_med, nr_sal
+from employees e, departments d, (select department_id, avg(salary) sal_med, count(*) nr_sal
+                                from employees
+                                group by department_id) ac
+where e.department_id=d.department_id and d.department_id=ac.department_id and salary>(Select avg(salary) from employees where department_id=e.department_id);
 
 
+--1
+select last_name, salary
+from employees 
+where salary > all(select avg(salary)
+                   from employees
+                   group by department_id);
+
+select last_name, salary
+from employees 
+where salary > (select max(avg(salary))
+                   from employees
+                   group by department_id);
+--2
+select last_name, salary, department_id
+from employees e
+where salary = (select min(salary)
+                 from employees
+                 where department_id=e.department_id);
+SELECT last_name, salary, department_id
+FROM employees
+WHERE (department_id, salary) IN (SELECT department_id, MIN(salary)
+ FROM employees
+ GROUP BY department_id);
+ 
+--3 Sa se obtina numele salariatilor care lucreaza intr-un departament in care exista cel putin 1
+--angajat cu salariul egal cu salariul maxim din departamentul 30.
+
+select last_name
+from employees e
+where (select count(salary)
+       from employees 
+       where salary=(select max(salary)
+                     from employees
+                     where department_id=30) and e.department_id=department_id)>=1;
+                    
+--4
+select last_name, salary
+from employees
+where rownum < 4
+order by salary desc;
+
+--5
+select employee_id, last_name, first_name
+from employees e
+where (select count(employee_id)
+       from employees
+       where manager_id=e.employee_id) >= 2;
+
+--6
+select location_id
+from departments
+where location_id in (select location_id
+                      from departments
+                      where department_id is not null)
+group by location_id;                     
+    
+--7
+select department_id, department_name
+from departments d
+where not exists (select 'x'
+                  from employees
+                  where department_id=d.department_id);
+                  
+select department_id, department_name
+from departments d
+where department_id not in (select department_id
+                            from employees
+                            where department_id=d.department_id);
+
+--8
+WITH val_dep AS (SELECT department_name, SUM(salary) AS total
+ FROM departments d join employees e ON (d.department_id = e.department_id)
+ GROUP BY department_name
+ ),
+val_medie AS (SELECT SUM(total)/COUNT(*) AS medie
+ FROM val_dep)
+SELECT *
+FROM val_dep
+WHERE total > (SELECT medie
+FROM val_medie)
+ORDER BY department_name;
+
+--9
+with angajati as (select employee_id, first_name, last_name, hire_date 
+                  from employees e
+                  where (select last_name
+                         from employees
+                         where e.manager_id=employee_id) like "King" and (select first_name
+                                                                          from employees
+                                                                          where e.manager_id=employee_id) like "Steven")
+                 )
+select *
+from angajati
+where to_char(hire_date, 'yyyy') not like '1970';
 
 
+--10
+select first_name, last_name, salary
+from employees
+where rownum<11
+order by salary;
+
+--11
+select department_name, case 
+                            when manager_id is null then 'Nimeni'
+                            else to_char(manager_id)
+                        end "Manager",
+                        (select count (employee_id)
+                         from employees
+                         where department_id = d.department_id)as Nr_ang
+                        
+from departments d;                                                   
+
+--12
+select last_name, first_name, length(last_name)
+from employees
+where nullif(length(last_name), length(first_name)) is not null;
+
+--13
+select last_name, hire_date, salary, case to_char(hire_date, 'yyyy')
+                                            when '1989' then salary * 1.20
+                                            when '1990' then salary * 1.15
+                                            when '1991' then salary * 1.10
+                                            else salary
+                                    end "Salariu cu marire"
+from employees;                                    
+
+--14
+select sum(salary) 
+from employees e join jobs j on (e.job_id=j.job_id)
+where upper(j.job_title) like 'S%'
+union
+select avg(salary)
+from employees
+where job_id = ( select job_id
+                from employees
+                where salary = (select max(salary) from employees))
+union
+select min(salary)
+from employees
+where job_id != ( select job_id
+                from employees
+                where salary = (select max(salary) from employees))
+group by job_id;
 
 
+--Laborator 7
+create table employees_SCA as
+select employee_id, department_id, first_name, last_name
+from employees;
+
+alter table employees_SCA add constraint Pk_emp_sca primary key(employee_id);
+
+desc employees_sca;
+
+create table dept_sca as select*from departments;
+
+alter table dept_SCA add constraint Pk_dept_sca primary key(department_id);
+
+alter table employees_sca add constraint fk_emp_dept_sca foreign key(department_id) references dept_sca(department_id);
+
+insert into dept_sca (department_id, department_name)
+values (300, 'Programare');
+
+insert into employees_sca(employee_id, last_name, department_id)
+values(207, 'Carutasu', 300);
+
+drop table employees_sca;
+create table emp_sca as (select * from employees);
+alter table emp_SCA add constraint Pk_emp_sca primary key(employee_id);
+alter table emp_sca add constraint fk_emp_dept_sca foreign key(department_id) references dept_sca(department_id);
+select job_id from emp_sca;
+insert into emp_sca(employee_id, last_name, department_id, email, hire_date, job_id)
+values(207, 'Carutasu', 300, 'carutasu@yahoo.com', to_date('17.06.2020', 'dd.mm.yyyy'),'IT_PROG' );
+
+commit;
+
+update emp_sca set salary=20000
+where employee_id=207;
+commit;
+
+--8
+INSERT INTO emp_sca (employee_id, last_name, email, hire_date, job_id, salary,
+ commission_pct)
+VALUES (252, 'Nume252', 'nume252@emp.com',SYSDATE, 'SA_REP', 5000, NULL);
+SELECT employee_id, last_name, email, hire_date, job_id, salary, commission_pct
+FROM emp_sca
+WHERE employee_id=252;
+rollback;
+
+INSERT INTO
+ (SELECT employee_id, last_name, email, hire_date, job_id, salary,
+ commission_pct
+ FROM emp_pnu)
+VALUES (252, 'Nume252', 'nume252@emp.com',SYSDATE, 'SA_REP', 5000, NULL);
+SELECT employee_id, last_name, email, hire_date, job_id, salary, commission_pct
+FROM emp_pnu
+WHERE employee_id=252;
+rollback;
+
+--9
+INSERT INTO (SELECT employee_id, last_name, hire_date, job_id, email
+ FROM emp_sca)
+ VALUES ( (SELECT max(employee_id) + 1
+ FROM emp_sca
+ ), 'nume_nou', sysdate, 'sa_man', 'email@pnu.com'
+ );
+
+SELECT * FROM emp_sca;
+ROLLBACK;
+
+drop table emp1_sca;
+--9
+create table emp1_sca as (select first_name, last_name, commission_pct from employees where commission_pct >= 0.25);
+select* from emp1_sca;
+
+--10
+INSERT INTO emp_sca
+ SELECT 0,USER,USER, 'TOTAL', 'TOTAL',SYSDATE,
+ 'TOTAL', SUM(salary), ROUND(AVG(commission_pct)), null, null
+ FROM employees;
+
+select * from emp_sca;
+
+rollback;
+
+create table emp_sca2 as (select * from employees where salary > 5000 and salary < 10000);
+drop table emp_sca2;
+create table emp2_sca as (select * from employees where salary > 5000 and salary < 10000);
+create table emp_sca3 as (select * from employees where salary > 10000);
+drop table emp_sca3;
+create table emp3_sca as (select * from employees where salary > 10000);
+
+delete from emp1_sca;
+
+drop table emp1_sca;
+
+create table emp1_sca as (select * from employees where commission_pct>=0.25);
+delete from emp1_sca;
+insert into emp1_sca (select * from employees where salary < 5000);
+
+create table emp0_sca as 
+(select * from employees where department_id=80);
+
+delete from emp1_sca;
+delete from emp2_sca;
+delete from emp3_sca;
+
+insert into emp1_sca(select * from employees where department_id != 0 and salary < 5000);
+delete from emp1_sca;
+commit;
+
+insert into emp1_sca(select * from employees where department_id != 80 and salary < 5000);
+rollback;
+delete from emp0_sca;
+INSERT FIRST
+WHEN department_id = 80 THEN
+INTO emp0_sca
+ WHEN salary < 5000 THEN
+ INTO emp1_sca
+ WHEN salary > = 5000 AND salary <= 10000 THEN
+ INTO emp2_sca
+ ELSE
+ INTO emp3_sca
+SELECT * FROM employees;
+SELECT * FROM emp0_sca;
+SELECT * FROM emp1_sca;
+SELECT * FROM emp2_sca;
+SELECT * FROM emp3_sca;
+
+--update
+--14
+update emp_sca
+set salary=salary+5/100*salary;
+
+select last_name, salary from emp_sca;
+rollback;
+
+--15
+update emp_sca
+set job_id='SA_REP'
+where department_id=80 and commission_pct is not null;
+
+select department_id, job_id from emp_sca;
+
+rollback;
+
+--16
+update emp_sca e
+set salary=salary+1000
+where lower(last_name) like '%grant%' and lower(first_name) like '%douglas%';
+
+rollback;
+
+--17
+update emp_sca e
+set (salary, commission_pct) = (select salary, commission_pct
+                                from emp_sca
+                                where employee_id=e.manager_id)
+where salary = (select min(salary)
+                from emp_sca);
+
+rollback;
+
+--18
+update emp_sca e
+set email = concat(substr(last_name,1,1), case when first_name is null then '.' else first_name end)
+where salary = (select max(salary)
+                from emp_sca
+                where department_id=e.department_id);
+
+select email from emp_sca e
+where salary = (select max(salary)
+                from emp_sca
+                where department_id=e.department_id);
 
 
+--19
+update emp_sca e
+set salary = (select avg(salary) from emp_sca)
+where hire_date = (select min(hire_date) from emp_sca where department_id=e.department_id);
 
 
+--delete
+--21
+delete from dept_sca s
+where (select count(employee_id)
+       from emp_sca 
+       where department_id=s.department_id) = 0;
 
+--22
+insert into dept_sca (department_id, department_name)
+values(267, 'Vanzari');
+select * from dept_sca
+where department_id=267;
+rollback;
 
+--23
+savepoint p;
 
+--24
+delete from dept_sca
+where department_id between 160 and 200;
 
+select * from dept_sca;
 
+--25
+rollback to p;
+commit;
 
+--lab 8
+select * from user_constraints
+where lower(table_name)='emp_sca';
 
+--select * from user_updatable_columns; -->la view
+rename emp_sca to emp_stca;
 
+rollback;
+select * from emp_stca;
+rename emp_stca to emp_sca;
 
+select * from user_tables
+where lower(table_name) like '%sca';
 
+--1
+create table angajati_sca (
+cod_ang number(4),
+nume varchar2(20) not null,
+prenume varchar2(20),
+email char(15),
+data_ang date default sysdate,
+job varchar2(10),
+cod_sef number(4),
+salariu number(8, 2) not null,
+cod_dep number(2));
+desc angajati_sca;
 
+--2
+insert into angajati_sca(cod_ang, nume, prenume, email, data_ang, job, cod_sef, salariu, cod_dep)
+values(100, 'Nume1', 'Prenume1', null, null, 'Director', null, 20000, 10);
+rollback;
+select * from angajati_sca;
 
+insert into angajati_sca
+values
+(101, 'Nume2', 'Prenume2', 'Nume2', to_date('02-02-2004', 'dd-mm-yyyy'), 'Inginer', 100, 10000, 10);
+insert into angajati_sca
+values(102, 'Nume3', 'Prenume3', 'Nume3', to_date('05-06-2000', 'dd-mm-yyyy'), 'Analist', 101, 5000, 20);
 
+rollback;
+savepoint p;
+delete from angajati_sca
+where cod_ang=102;
+insert into angajati_sca (cod_ang, nume, prenume, email, data_ang, job, cod_sef, salariu, cod_dep)
+values(103, 'Nume4', 'Prenume4', null, null, 'Inginer', 100, 9000, 20);
+insert into angajati_sca
+values(104, 'Nume5', 'Prenume5', 'Nume5', null, 'Analist', 101, 3000, 30);
+rollback to p;
 
+select * from angajati_sca;
+delete from angajati_sca;
 
+--3
+alter table angajati_sca
+add comision number(4,2);
 
+--5
+alter table angajati_sca
+modify salariu default 0;
 
+--6
+alter table angajati_sca
+modify comision number(2,2) modify salariu number(10,2);
 
+--7
+update angajati_sca
+set comision=0.1
+where upper(job) like 'A%';
 
+--8
+alter table angajati_sca
+modify email varchar2(200);
 
+--9
+alter table angajati_sca
+add nr_telefon varchar2(10) default 0;
 
+--10
+select * from angajati_sca;
 
+alter table angajati_sca
+drop column nr_telefon;
 
+--11
+create table departamente_sca(
+cod_dep number(2),
+nume varchar2(15) not null,
+cod_director number(4));
 
+desc departamente_sca;
 
+--12
+insert into departamente_sca
+values (10, 'Administrativ', 100);
+insert into departamente_sca
+values (20, 'Proiectare', 101);
+insert into departamente_sca
+values (30, 'Programare', null);
 
+--13
+alter table departamente_sca
+add constraint dep_pk primary key(cod_dep);
 
+desc departamente_sca;
 
+alter table angajati_sca
+add constraint ang_fk_depId FOREIGN key(cod_dep) REFERENCES departamente_sca(cod_dep);
 
+create table angajati1_sca
+(cod_ang number(4) primary key,
+ nume varchar2(20) constraint nume_sca not null,
+ prenume varchar2(20),
+ email char(15),
+ data_ang date default sysdate,
+ job varchar2(10),
+ cod_sef number(4),
+ salariu number(8, 2) constraint salariu_sca not null,
+ cod_dep number(2),
+ comision number(2,2),
+ constraint nume_prenume_unique_sca unique(nume,prenume),
+ constraint verifica_sal_sca check(salariu > 100*comision),
+ unique(email),
+ constraint sef_pnu foreign key(cod_sef) references angajati_sca(cod_ang),
+ constraint fk_dep_pnu foreign key(cod_dep) references departamente_sca (cod_dep),
+ check(cod_dep > 0)
+ );
 
+alter table angajati_sca
+add constraint pk_ang primary key(cod_ang);
 
+--16
 
+insert into angajati1_sca (cod_ang, nume, prenume, email, data_ang, cod_sef, salariu, cod_dep, comision)
+values
+(101, 'Nume2', 'Prenume2', 'Nume2', to_date('02-02-2004', 'dd-mm-yyyy'), null, 10000, 10, 0.1);
+insert into angajati1_sca
+values(102, 'Nume3', 'Prenume3', 'Nume3', to_date('05-06-2000', 'dd-mm-yyyy'), 'Analist', 100, 5000, 20, 0.1);
 
+select * from angajati1_sca;
+--17
+SELECT * FROM tab;
+SELECT table_name FROM user_tables;
 
+--18
+--a
+SELECT constraint_name, constraint_type, table_name
+FROM user_constraints
+WHERE lower(table_name) IN ('angajati_sca', 'departamente_sca');
 
+--b
+SELECT constraint_name, table_name, column_name
+FROM user_cons_columns
+WHERE lower(table_name) IN ('angajati_sca', 'departamente_sca');
 
+--19
+alter table angajati1_sca
+modify email not null;
 
+--20
+desc angajati1_sca;
+insert into angajati1_sca (cod_ang, nume, email, salariu)
+values((select max(cod_ang) from angajati1_sca) + 1, 'Carutasu', 'carutasu', 20000);
 
+--21
+insert into departamente_sca
+values(60, 'Analiza', null);
+commit;
 
+--22
+delete from departamente_sca
+where cod_dep=20;
 
+--23
+delete from departamente_sca
+where cod_dep=60;
+select * from departamente_sca;
+rollback;
 
+--24
+SELECT constraint_name, constraint_type, table_name
+FROM user_constraints
+WHERE lower(table_name) IN ( 'angajati1_sca');
+alter table angajati1_sca
+drop constraint FK_DEP_PNU;
 
+alter table angajati1_sca
+add constraint fk_dep foreign key(cod_dep) references departamente_sca(cod_dep) on delete cascade;
 
+--25
+commit;
+delete from departamente_sca
+where cod_dep=20;
+select * from angajati1_sca;
+alter table angajati1_sca
+rename to ang_sca;
+commit;
+
+desc departamente_sca;

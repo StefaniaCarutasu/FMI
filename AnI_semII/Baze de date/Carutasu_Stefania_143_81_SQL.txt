@@ -1,0 +1,55 @@
+--1
+select t.nume, t.prenume, c.nr_camera, h.denumire
+from hotel h join camera c on (h.id=c.id_hotel)
+             join cazare cz on (cz.id_camera=c.id)
+             join turist_cazare tc on(cz.id=tc.id_cazare)
+             join turist t on (tc.id_turist=t.id)
+where (select sysdate from dual) between cz.data_cazare and cz.data_cazare+cz.nr_zile;
+
+--2
+select denumire,  (select sum(tarif)
+                  from tarif_camera tf, camera cm, cazare cz
+                  where tf.id_camera=cm.id and cz.id_camera=cm.id and cz.nr_zile = 1 ) Suma 
+from hotel h join camera c on (h.id=c.id_hotel)
+             join cazare cz on (c.id=cz.id_camera)
+where (select count(id_turist)
+        from turist_cazare 
+        where id_cazare=cz.id) = (select max(count(id_turist))
+                                         from turist_cazare
+                                         where id_cazare=cz.id
+                                         group by id_turist)
+group by denumire;
+
+--3
+select nume
+from turist t join turist_cazare tc on (t.id=tc.id_turist)
+              join cazare cz on (tc.id_cazare=cz.id)
+              join camera c on (c.id=cz.id_camera)
+              join hotel h on (h.id=c.id_hotel)
+--trebuie verificat ca toate camerele din tabela camera sa fie macar o data in tabela cazare
+where (select id from camera 
+       where id_hotel=h.id) in (select distinct(id_camera)
+                                  from cazare cz, camera c
+                                  where cz.id_camera=c.id and c.id_hotel=h.id) and sysdate between cz.data_cazare and cz.data_cazare+nr_zile
+group by nume
+having count(h.id) = (select count(id) from hotel);
+
+--4
+update cazare
+set nr_zile=nr_zile + 1
+where id in (select id
+            from cazare
+            where nr_zile = (select max(nr_zile)
+                             from cazare));
+
+--5
+
+select constraint_name, constraint_type
+from user_constraints
+where lower(table_name) = 'cazare'; --fk_cazare_camera
+
+alter table cazare
+drop constraint FK_CAZARE_CAMERA;
+
+alter table cazare
+add constraint fk_cazare_camera foreign key(id_camera) references camera(id) on delete cascade;
