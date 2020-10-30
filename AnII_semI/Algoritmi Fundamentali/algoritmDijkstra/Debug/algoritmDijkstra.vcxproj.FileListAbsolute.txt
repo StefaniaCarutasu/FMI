@@ -1,0 +1,2 @@
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmDijkstra\Debug\algoritmDijkstra.exe
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmDijkstra\Debug\algoritmDijkstra.pdb

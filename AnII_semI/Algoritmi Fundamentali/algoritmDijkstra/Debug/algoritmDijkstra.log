@@ -1,0 +1,4 @@
+﻿  algoritmDijkstra.cpp
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmDijkstra\algoritmDijkstra.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmDijkstra\algoritmDijkstra.cpp(41,21): warning C4018: '<': signed/unsigned mismatch
+  algoritmDijkstra.vcxproj -> E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmDijkstra\Debug\algoritmDijkstra.exe
