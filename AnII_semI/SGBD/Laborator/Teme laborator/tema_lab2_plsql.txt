@@ -1,0 +1,287 @@
+
+--1
+declare
+    type emp_type is record
+        (cod emp_sca.employee_id%TYPE,
+         salariu emp_sca.salary%type);
+    TYPE tab_ind IS TABLE OF emp_sca.employee_id%type INDEX BY PLS_INTEGER;
+    t tab_ind; --doar coduri
+    TYPE tab_ind1 IS TABLE OF emp_type INDEX BY PLS_INTEGER;
+    t1 tab_ind1;  --coduri si salarii
+    cod emp_sca.employee_id%type;
+    salariu emp_sca.salary%type;
+    j number(4) := 0;
+    minim emp_sca.employee_id%type;
+    maxim emp_sca.employee_id%type;
+    maxSal emp_sca.salary%type;
+begin
+    select min(employee_id) into minim from emp_sca;
+    select max(employee_id) into maxim from emp_sca;
+    
+    for i in minim..maxim loop
+        select employee_id, salary
+        into cod, salariu
+        from emp_sca
+        where employee_id = i;
+        
+        if j < 5 then
+            t(j) := cod;
+            t1(j).cod := cod;
+            t1(j).salariu := salariu;
+        else
+            maxSal := 0;
+            for k in t1.first..t1.last loop
+                if t1(k).salariu > maxSal then
+                    maxSal := t1(k).salariu;
+                end if;
+            end loop;
+            for k in t1.first..t1.last loop
+                if t1(k).salariu = maxSal and salariu < maxSal then
+                    t1(k).salariu := salariu;
+                    t1(k).cod := cod;
+                    t(k) := cod;
+                end if;
+            end loop;
+        end if;
+    end loop;
+    
+    for i in t.first..t.last loop
+        update emp_sca
+        set salary = salary + salary * 0.05
+        where employee_id = t(i);
+     end loop;   
+    
+     for i in t1.first..t1.last loop
+       dbms_output.put_line('Angajat: ' || t1(i).cod || 
+                            '; salariu vechi: ' || t1(i).salariu || 
+                            '; salariu nou: ' || t1(i).salariu + 0.05 * t1(i).salariu); 
+     end loop;
+end;
+--Varinta 2
+declare
+type vector is varray(5) of emp_sca.employee_id%type;
+t   vector := vector();
+s employees.salary%type;
+begin
+    select employee_id
+    bulk collect into t
+    from emp_sca
+    where ROWNUM <= 5
+    order by salary;
+    for i in t.first..t.last loop
+        update emp_sca
+        set salary = salary + salary * 0.05
+        where employee_id = t(i);
+    end loop;
+    for i in t.first..t.last loop
+        select salary
+        into s
+        from emp_sca
+        where employee_id = t(i);
+        dbms_output.put_line('Angajatul: ' || t(i) || ' are salariul ' || s);
+    end loop;
+end;
+/
+
+--2  
+create or replace type tip_orase_sca IS TABLE OF varchar2(30);
+/
+create table excursie_sca (
+cod_excursie number(4) primary key,
+denumire varchar2(20),
+orase tip_orase_sca,
+status varchar2(15) )
+
+nested table orase store as table_orase_sca;
+    --a
+    insert into excursie_sca 
+    values (1, 'Excursie1', tip_orase_sca('Bucuresti', 'Constanta', 'Mangalia'), 'Disponibil');
+    insert into excursie_sca
+    values (2, 'Excursie2', tip_orase_sca('Bucuresti', 'Predeal', 'Brasov'), 'Anulat');
+    insert into excursie_sca
+    values (3, 'Excursie3', tip_orase_sca('Bucuresti'), 'Disponibil');
+    insert into excursie_sca
+    values (4, 'Excursie4', tip_orase_sca('Bucuresti', 'Constanta'), 'Anulat');
+    insert into excursie_sca
+    values (5, 'Excursie5', tip_orase_sca('Bucuresti', 'Sinaia'), 'Anulat');
+    commit;
+select * from excursie_sca;
+rollback;
+drop table excursie_sca;
+
+--b
+--oras pe ultima pozitie
+declare
+    excursie varchar2(20) := '&p_excursie';
+    oras varchar2(30) := '&p_oras';
+    v tip_orase_sca;
+begin
+    select orase 
+    into v
+    from excursie_sca
+    where denumire = excursie;   
+    v.extend;
+    v(v.last) := oras;   
+    update excursie_sca
+    set orase = v
+    where denumire = excursie;
+end;
+/
+
+--inserare pe a doua pozitie
+declare
+    excursie varchar2(20) := '&p_excursie';
+    oras varchar2(30) := '&p_oras';
+    v tip_orase_sca;
+    i number(4);
+begin
+    select orase
+    into v
+    from excursie_sca
+    where lower(denumire) = lower(excursie);
+    
+    v.extend;
+    for i in reverse 2..v.last loop
+        v(i) := v(i-1);
+    end loop;
+    v(2) := initcap(oras);
+    
+     update excursie_sca
+    set orase = v
+    where denumire = excursie;
+    commit;
+end;
+/
+--inversare ordine vizitare
+declare
+    excursie varchar2(20) := '&p_excursie';
+    oras1 varchar2(30) := '&p_oras1';
+    oras2 varchar2(30) := '&p_oras2';
+    v tip_orase_sca;
+begin
+    select orase
+    into v
+    from excursie_sca
+    where lower(denumire) = lower(excursie);
+    
+    for i in v.first..v.last loop
+        if initcap(v(i)) = initcap(oras1) then v(i) := initcap(oras2);
+        elsif initcap(v(i)) = initcap(oras2) then v(i) := initcap(oras1);
+        end if;
+    end loop;
+    
+    update excursie_sca
+    set orase = v
+    where denumire = excursie;
+    commit;
+   
+end;
+/ 
+
+-- eliminare din lista
+declare
+    excursie varchar2(20) := '&p_excursie';
+    oras varchar2(30) := '&p_oras';
+    v1 tip_orase_sca;
+    j number(4) := -1;
+begin
+    select orase
+    into v1
+    from excursie_sca
+    where lower(denumire) = lower(excursie);
+    
+    for i in v1.first..v1.last loop
+        if initcap(v1(i)) = initcap(oras) then 
+            j := i;
+        end if;
+    end loop;
+    
+    v1.delete(j);
+    
+    update excursie_sca
+    set orase = v1
+    where denumire = excursie;
+    commit;
+    
+end;
+/    
+rollback;
+select * from excursie_sca;
+
+--c
+declare
+excursie excursie_sca.cod_excursie%type := &p_cod;
+type exc_type is record
+        (nume excursie_sca.denumire%TYPE,
+         orase excursie_sca.orase%type);
+orase_vizitate exc_type;
+begin 
+    select denumire, orase
+    into orase_vizitate
+    from excursie_sca
+    where cod_excursie = excursie;
+    
+    dbms_output.put_line('In excursia cu numele ' || orase_vizitate.nume || ' au fost vizitate '
+                        || orase_vizitate.orase.count || ' orase: ');
+    for i in orase_vizitate.orase.first..orase_vizitate.orase.last loop
+         if i = orase_vizitate.orase.last then
+                dbms_output.put_line(orase_vizitate.orase(i) || ';');
+         else dbms_output.put_line(orase_vizitate.orase(i) || ', ');
+         end if;
+    end loop;
+    
+end;
+/
+
+--d
+declare
+type exc_type is record
+        (nume excursie_sca.denumire%TYPE,
+         orase excursie_sca.orase%type);
+TYPE tab_ind IS TABLE OF exc_type;
+v tab_ind;
+begin
+    select denumire, orase
+    bulk collect into v
+    from excursie_sca;
+    
+    for i in v.first..v.last loop
+        dbms_output.put(v(i).nume ||': ');
+        for j in v(i).orase.first..v(i).orase.last loop
+            if j = v(i).orase.last then
+                dbms_output.put(v(i).orase(j) || ';');
+            else dbms_output.put(v(i).orase(j) || ', ');
+            end if;
+        end loop;
+        dbms_output.put_line('');
+    end loop;
+end;
+/
+
+--e
+declare
+type exc_type is record
+        (cod excursie_sca.cod_excursie%TYPE,
+         orase excursie_sca.orase%type);
+TYPE tab_ind IS TABLE OF exc_type;
+v tab_ind;
+nr number(4) := 1000;
+begin    
+    select cod_excursie, orase
+    bulk collect into v
+    from excursie_sca;
+    
+    for i in v.first..v.last loop
+        if v(i).orase.count < nr then nr := v(i).orase.count;
+        end if;
+    end loop;
+    
+    for i in v.first..v.last loop
+        if v(i).orase.count = nr then 
+            update excursie_sca
+            set status = 'Anulata'
+            where cod_excursie = v(i).cod;
+        end if;
+    end loop;
+end;
+/

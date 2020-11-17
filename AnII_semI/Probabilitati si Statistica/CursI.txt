@@ -1,9 +1,0 @@
-Probabilitati- curs I
-
-Camp de probabilitate, operatii cu evenimente
-
-Def: Experimentele al caror rezultat nu poate fi prezis cu exactitate inaintea
-realizarii acestora se numesc experimente aleatoare.
-
-Def: Multimea tuturor rezultatelor posibile ale unui experiment aleator se num spatiul 
-starilor (spatiul posibilitatilor) si se noteaza cu Omega mare.

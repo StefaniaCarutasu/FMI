@@ -1,0 +1,187 @@
+--1
+--a: 2
+--b: text 2
+--c: text 3 adaugat in sub-bloc
+--c: la inceputul blocului este 100 si dupa executia numar := numar + 1 are valoarea 101
+--d: la inceputul blocului are valoarea text 1 si apoi valoarea text 1 adaugat in blocul principal
+--e: la inceputul bloului are valoarea text 2 si la finalul blocului are valoarea text 2 adaugat in blocul principal
+
+
+--2
+--a
+SELECT
+    to_char(book_date, 'dd'),
+    COUNT(*)
+FROM
+    rental
+WHERE
+    to_char(book_date, 'mm') = '10'
+    AND to_char(book_date, 'yyyy') = to_char(sysdate, 'yyyy')
+GROUP BY
+    to_char(book_date, 'dd');
+
+--b
+CREATE TABLE octombrie_sca
+    AS
+        SELECT
+            to_char(book_date, 'dd') Data,
+            COUNT(*) NrImp
+        FROM
+            rental
+        WHERE
+            to_char(book_date, 'mm') = '10'
+            AND to_char(book_date, 'yyyy') = to_char(sysdate, 'yyyy')
+        GROUP BY
+            to_char(book_date, 'dd');
+drop table octombrie_sca;
+
+CREATE TABLE octombrie_sca (
+    id     NUMBER(2),
+    data   DATE
+);
+
+DECLARE
+    var_data date;
+    i number(3) := 1;
+BEGIN
+    while i <=31 loop
+        var_data := to_date(i || 'October 2020', 'dd-mm-yy');
+        INSERT INTO octombrie_sca
+        VALUES (i, var_data);
+        i := i + 1;
+    END LOOP;
+END;
+/
+
+drop table octombrie_sca;
+
+--3
+DECLARE
+    nume_membru   member.last_name%TYPE := '&nume';
+    nr_titluri    NUMBER(3);
+BEGIN
+    SELECT
+        COUNT(title_id)
+    INTO nr_titluri
+    FROM
+        rental   r
+        JOIN member   m ON ( r.member_id = m.member_id )
+    WHERE
+        lower(m.last_name) = lower(nume_membru);
+ dbms_output.put_line('Membrul '
+                             || initcap(nume_membru)
+                             || ' a imprumutat '
+                             || nr_titluri
+                             || ' titluri');
+EXCEPTION
+    WHEN no_data_found THEN
+        dbms_output.put_line('Nu exista membru cu acest nume!');
+    WHEN too_many_rows THEN
+        dbms_output.put_line('Exista mai multi membri cu acest nume!');
+       
+END;
+/
+
+--4
+DECLARE
+    nume_membru        member.last_name%TYPE := '&nume';
+    nr_titluri         NUMBER(3);
+    categorie          VARCHAR2(25);
+    nr_total_titluri   NUMBER(5);
+BEGIN
+
+    SELECT
+        COUNT(title_id)
+    INTO nr_total_titluri
+    FROM
+        title;
+ 
+    SELECT
+        COUNT(title_id)
+    INTO nr_titluri
+    FROM
+        rental   r
+        JOIN member   m ON ( r.member_id = m.member_id )
+    WHERE
+        lower(m.last_name) = lower(nume_membru);
+
+    IF nr_titluri >= (75 / 100) * nr_total_titluri THEN
+        categorie := 'Categoria 1';
+    ELSIF nr_titluri >= (50 / 100) * nr_total_titluri THEN
+        categorie := 'Categoria 2';
+    ELSIF nr_titluri >= (25 / 100) * nr_total_titluri THEN
+        categorie := 'Categoria 3';
+    ELSE
+        categorie := 'Categoria 4';
+    END IF;
+
+    dbms_output.put_line('Membrul '
+                         || initcap(nume_membru)
+                         || ' a imprumutat '
+                         || nr_titluri
+                         || ' titluri si este memebru de '
+                         || categorie);
+END;
+/
+
+--5
+CREATE TABLE member_sca
+    AS
+        SELECT
+            *
+        FROM
+            member;
+
+ALTER TABLE member_sca ADD discount NUMBER(2);
+
+SELECT
+    *
+FROM
+    member_sca;
+
+DECLARE
+    nr_titluri         NUMBER(3);
+    categorie          VARCHAR2(25);
+    nr_total_titluri   NUMBER(5);
+    id                 member.member_id%TYPE := &p_cod;
+BEGIN
+    SELECT
+        COUNT(title_id)
+    INTO nr_total_titluri
+    FROM
+        title; --preiau numerul total de titluri
+
+    SELECT
+        COUNT(title_id)
+    INTO nr_titluri
+    FROM
+        rental   r
+        JOIN member   m ON ( r.member_id = m.member_id )
+    WHERE
+        m.member_id = id; --preiau numarul de titluri imprumutate de membrul cu id-ul id
+
+
+    UPDATE member_sca
+    SET
+        discount =
+            CASE
+                WHEN nr_titluri >= ( 75 / 100 ) * nr_total_titluri THEN
+                    10
+                WHEN nr_titluri >= ( 50 / 100 ) * nr_total_titluri THEN
+                    5
+                WHEN nr_titluri >= ( 25 / 100 ) * nr_total_titluri THEN
+                    3
+                ELSE
+                    NULL
+            END
+    WHERE
+        member_id = id; --fac actualizarea
+
+    IF SQL%rowcount = 0 THEN
+        dbms_output.put_line('Nu exista acst membru');
+    ELSE
+        dbms_output.put_line('Actualizare reusita');
+    END IF;
+
+END;
+/

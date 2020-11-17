@@ -1,2 +1,0 @@
-factori :: Int -> [Int]
-factori n = [x | mod n x = 0, x >1]

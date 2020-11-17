@@ -1,0 +1,4 @@
+﻿  multimiDisjuncteKruskal.cpp
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\multimiDisjuncteKruskal\multimiDisjuncteKruskal.cpp(25,18): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\multimiDisjuncteKruskal\multimiDisjuncteKruskal.cpp(61,29): warning C4018: '<': signed/unsigned mismatch
+  multimiDisjuncteKruskal.vcxproj -> E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\multimiDisjuncteKruskal\Debug\multimiDisjuncteKruskal.exe

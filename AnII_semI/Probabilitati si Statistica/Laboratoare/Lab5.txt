@@ -1,0 +1,65 @@
+#Lucrul cu functii in R
+
+f <- function()
+{
+  #optional return()
+}
+
+f1 <- function(x)
+{
+  2^x
+}
+
+f1(3)
+
+#Sa se scrie o functie care afiseaza toate nr prime 
+#mai mici decat un n dat
+
+isPrim <- function(x)
+{
+  for(i in 2:ceiling(sqrt(x)))
+  {
+    if(x%%i == 0) return(F)
+  }
+  return(T)
+}
+
+isPrim(3)
+
+f_prim <- function(x)
+{
+  for(i in 2:x)
+  if(isPrim(i))
+    print(i)
+}
+
+t<-f_prim(101)
+
+integrate(f1,0,3)
+
+7/log(2)
+
+f2 <- function(x)
+{
+  2*x
+}
+
+integrate(f2,1,2)
+
+#Integram functia gama
+fGama <- function(x,a)
+{
+  x^(a-1)*exp(-x)
+}
+
+integrate(fGama,0, Inf, a=4)
+
+
+
+#Reprezentarea grafica a functiilor
+
+t <- seq(-1,3,0.001)
+plot(t,f1(t), col="red", xlim=c(-1,0), ylim = c(0,1))
+
+
+

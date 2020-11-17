@@ -5,6 +5,7 @@
 #include<algorithm>
 
 using namespace std;
+
 map<int, vector<pair<int, int>>> listaAdiacentaPonderi;
 vector<pair<int, pair<int, int>>> vectorPonderi;
 vector<pair<int, pair<int, int>>> vectorArbore;
@@ -39,11 +40,6 @@ void afisareListaAdiacentaPonderi(map<int, vector<pair<int, int>>> l)
 bool comparaPonderi(pair<int, pair<int, int>> p1, pair<int, pair<int, int>> p2)
 {
 	return p1.first > p2.first;
-}
-
-bool comparaNod(pair<int, pair<int, int>> p1, pair<int, pair<int, int>> p2)
-{
-	return p1.second.first > p2.second.second;
 }
 //Daca avem n noduri in graful initial, arborele va avea n-1 muchii
 //Pas1: scoatem buclele si muchiile paralele

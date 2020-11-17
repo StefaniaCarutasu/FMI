@@ -1,4 +1,5 @@
 ﻿  algoritmKruskal.cpp
-E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\algoritmKruskal.cpp(25,20): warning C4018: '<': signed/unsigned mismatch
-E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\algoritmKruskal.cpp(28,21): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\algoritmKruskal.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\algoritmKruskal.cpp(30,21): warning C4018: '<': signed/unsigned mismatch
+E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\algoritmKruskal.cpp(60,18): warning C4018: '<': signed/unsigned mismatch
   algoritmKruskal.vcxproj -> E:\transfer\Facultate\FMI\AnII_semI\Algoritmi Fundamentali\algoritmKruskal\Debug\algoritmKruskal.exe
