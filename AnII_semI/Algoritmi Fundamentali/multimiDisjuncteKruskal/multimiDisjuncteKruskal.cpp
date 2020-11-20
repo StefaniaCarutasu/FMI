@@ -6,56 +6,8 @@
 #include<string>
 
 using namespace std;
-//map<int, vector<int>> multimi;
 vector<vector<int>> muchii;
 vector<int> tata, h;
-
-/*void citireMultimi()
-{
-    ifstream f("multimi.in.txt");
-    int nrMultimi, j = 0;
-    string nr, str = "";
-    getline(f, nr);
-    nrMultimi = stoi(nr);
-
-    while (std::getline(f, str))
-    {
-        int i = 0;
-        string s = "";
-        int n;
-        while (i < str.length())
-        {
-            if (str[i] != ' ')
-            {
-                s += str[i];
-                i++;
-            }
-            else 
-            {
-                n = stoi(s);
-                multimi[j].push_back(n);
-                i++;
-                s = "";
-                r.push_back(0);
-            }
-            if (i == str.length())
-            {
-                n = stoi(s);
-                multimi[j].push_back(n);
-                i++;
-                s = "";
-                r.push_back(0);
-            }
-        }
-        j++;
-    }
-
-}*/
-
-bool comparaPonderi(vector<int> v1, vector<int> v2)
-{
-    return v1[2] > v2[2];
-}
 
 void citire()
 {
@@ -67,9 +19,6 @@ void citire()
         v.push_back(x), v.push_back(y), v.push_back(z);
         muchii.push_back(v);
     }
-    //Sortam muchiile in oridinea ponderilor
-    sort(muchii.begin(), muchii.end(), comparaPonderi);
-
 }
 
 void Initializare(int u)
@@ -102,25 +51,33 @@ void Reuneste(int u, int v)
     }
 }
 
+bool comparaPonderi(vector<int> v1, vector<int> v2)
+{
+    return v1[2] > v2[2];
+}
+
 void Kruskal()
 {
-    vector<vector<int>> coada;
-    coada.push_back(muchii[0]);
+    vector<vector<int>> subarbore;
+    //Sortam muchiile in oridinea ponderilor
+    sort(muchii.begin(), muchii.end(), comparaPonderi);
+    for (int v = 1; v <= muchii.size(); v++)
+        Initializare(v);
+    int nrmsel = 0;
+    for (auto uv : muchii)
+    {
+        if (Reprez(uv[0]) != Reprez(uv[1])) //uv[0] e varful u si uv[1] este varful v
+        {
+            subarbore.push_back(uv); //E(T) = E(T) reunit cu uv
+            Reuneste(uv[0], uv[1]);
+            nrmsel++;
+            if (nrmsel == muchii.size() - 1)
+                break;
+        }
+    }
 }
 
 int main()
 {
-    /*citireMultimi();
-    int contor = 1;
-    for (contor = 0; contor < multimi.size(); contor++)
-    {
-        cout << "Multimea " << contor + 1 << ": ";
-        for (auto j : multimi[contor])
-        {
-            cout << j << " ";
-        }
-        cout << '\n';
-    }*/
-
     return 0;
 }
