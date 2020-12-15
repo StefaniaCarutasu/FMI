@@ -1,0 +1,257 @@
+--1
+select department_name, count(employee_id)
+from departments d join employees e on (d.department_id = e.department_id (+) )
+group by department_name;
+
+--2
+--cursor + colectie
+declare 
+    type dep_type is record
+        (nume dep_sca.department_name%TYPE,
+         nr number(4));
+    t dep_type;
+    cursor c is
+        select department_name nume, count(employee_id) nr
+        from departments d join employees e on (d.department_id = e.department_id (+))
+        group by department_name;       
+begin
+    open c;
+    loop
+        fetch c into t;
+        exit when c%notfound;
+        if t.nr = 0 then
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t.nume|| ' nu lucreaza angajati');
+        ELSIF t.nr=1 THEN
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t.nume|| ' lucreaza un angajat');
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t.nume|| ' lucreaza '|| t.nr ||' angajati');
+        END IF;
+    end loop;
+    close c;
+end;
+/
+
+--doar colectii
+declare 
+    type dep_type is record
+        (nume dep_sca.department_name%TYPE,
+         nr number(4));
+    type v_dep_type is table of dep_type;
+    t v_dep_type;    
+begin
+    select department_name nume, count(employee_id) nr
+    bulk collect into t
+    from departments d join employees e on (d.department_id = e.department_id (+))
+    group by department_name;  
+    for i in t.first..t.last loop
+        if t(i).nr = 0 then
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t(i).nume|| ' nu lucreaza angajati');
+        ELSIF t(i).nr=1 THEN
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t(i).nume|| ' lucreaza un angajat');
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('In departamentul '|| t(i).nume|| ' lucreaza '|| t(i).nr ||' angajati');
+        END IF;
+    end loop;
+end;
+/
+
+--5
+--primii 3
+select *
+from (select sef.employee_id CodSef, max(sef.last_name) NumeSef, count(*) nrAng
+      from employees sef join employees ang on (sef.employee_id = ang.manager_id)
+      group by sef.employee_id
+      order by nrAng desc)
+where rownum <= 3;
+
+--primii 4
+select *
+from (select sef.employee_id CodSef, max(sef.last_name) NumeSef, count(*) nrAng
+      from employees sef join employees ang on (sef.employee_id = ang.manager_id)
+      group by sef.employee_id
+      order by nrAng desc)
+where rownum <= 4;
+
+--10a
+--cursor clasic
+declare
+    cursor c is
+        select d.department_name, e.last_name
+        from dep_sca d join emp_sca e on (d.department_id = e.department_id)
+        where d.department_id in (10,20,30,40);
+    nume_dep dep_sca.department_name%type;
+    nume_ang emp_sca.last_name%type;
+begin
+    open c;
+    loop 
+        fetch c into nume_dep, nume_ang;
+        exit when c%notfound;
+        dbms_output.put_line('Departament: ' || nume_dep || '; Angajat: ' || nume_ang);
+    end loop;
+    close c;
+end;
+/
+
+--ciclu cursor
+declare
+    cursor c is
+        select d.department_name numeDep, e.last_name numeAng, e.first_name prenumeAng
+        from dep_sca d join emp_sca e on (d.department_id = e.department_id)
+        where d.department_id in (10,20,30,40);
+    nume_dep dep_sca.department_name%type;
+    nume_ang emp_sca.last_name%type;
+begin
+    for i in c loop
+        exit when c%notfound;
+        dbms_output.put_line('Departamentul: ' || i.numeDep || '; Nume angajat: ' || i.numeAng || ' ' || i.prenumeAng);
+    end loop;
+end;
+/
+
+--1
+--cursor clasic
+declare 
+    cursor c is
+        select j.job_title Job, e.last_name Nume, e.salary Salariu
+        from jobs j join employees e on (j.job_id (+) = e.job_id);
+    i number(1) := 0;
+    nume_job_vechi jobs.job_title%type;
+    nume_job jobs.job_title%type;
+    nume employees.last_name%type;
+    salariu employees.salary%type;
+begin
+    open c;
+    loop
+        fetch c into nume_job, nume, salariu;
+        exit when c%notfound;
+        if i = 0 then 
+            i := i + 1;
+            nume_job_vechi := nume_job;
+            dbms_output.put_line('Nume job: ' || nume_job || '  Angajat: ' || nume || '; Salariu: ' || salariu);
+        elsif nume_job_vechi = nume_job and i = 1 then
+            dbms_output.put(' Angajat: ' || nume || '  Salariu: ' || salariu);
+        else 
+            nume_job_vechi := nume_job;
+            dbms_output.put_line('Nume job: ' || nume_job || '  Angajat: ' || nume || '  Salariu: ' || salariu);
+        end if;
+    end loop;
+    close c;
+end;
+/
+
+--b) ciclu cursor
+declare 
+    cursor c is
+        select j.job_title Job, e.last_name Nume, e.salary Salariu
+        from jobs j join employees e on (j.job_id (+) = e.job_id);
+    j number(1) := 0;
+    nume_job_vechi jobs.job_title%type;
+begin
+    for i in c loop
+        if j = 0 then
+            j := j + 1;
+            nume_job_vechi := i.Job;
+            dbms_output.put_line('Nume job: ' || i.Job || '  Angajat: ' || i.Nume || '; Salariu: ' || i.Salariu);
+        elsif nume_job_vechi = i.Job and j= 1 then
+            dbms_output.put(' Angajat: ' || i.Nume || '  Salariu: ' || i.Salariu);
+        else 
+            nume_job_vechi := i.Job;
+            dbms_output.put_line('Nume job: ' || i.Job || '  Angajat: ' || i.Nume || '  Salariu: ' || i.Salariu);
+        end if;
+    end loop;
+end;
+/
+
+--c) ciclu cursor cu subcereri
+begin
+    for v_job in (select job_title Titlu, job_id Job
+                  from jobs)
+    loop
+       DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+       DBMS_OUTPUT.PUT_LINE ('Job '||v_job.Titlu);
+        DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+       for v_ang in (select last_name nume, salary salariu
+                     from employees
+                     where job_id = v_job.Job)
+       loop
+            dbms_output.put_line(v_ang.nume || ' ' || v_ang.salariu);
+       end loop;
+    end loop;
+end;
+/
+
+--d) expresii cursor
+declare
+    type refcursor is ref cursor;
+    cursor c_job is
+    select job_title, cursor (select last_name, salary
+                             from employees e
+                             where e.job_id = j.job_id)
+    from jobs j;
+    nume_job jobs.job_title%type;
+    v_cursor refcursor;
+    v_nume employees.last_name%type;
+    v_salariu employees.salary%type;
+    
+begin
+    open c_job;
+    loop
+        fetch c_job into nume_job, v_cursor;
+        exit when c_job%notfound;
+        DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+        DBMS_OUTPUT.PUT_LINE ('Job '||nume_job);
+        DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+        loop
+            fetch v_cursor into v_nume, v_salariu;
+            exit when v_cursor%notfound;
+            DBMS_OUTPUT.PUT_LINE(v_nume || ' ' || v_salariu);
+        end loop;
+    end loop;
+    close c_job;
+end;
+/
+
+--2
+declare
+    i number(4);
+begin
+    for v_job in (select job_title Titlu, job_id Job, (select count(employee_id)
+                                                       from employees
+                                                       where job_id = j.job_id) nrAng,
+                                                       (select sum(salary)
+                                                       from employees
+                                                       where job_id = j.job_id) TotalVenituri,
+                                                       (select avg(salary)
+                                                       from employees
+                                                       where job_id = j.job_id) MedieVenituri,
+                                                       (select count(employee_id)
+                                                       from employees) nrTotalAng,
+                                                       (select sum(salary)
+                                                       from employees) sumaTotalaVenituri,
+                                                       (select avg(salary)
+                                                       from employees) medieTotalaVenituri
+                                                       
+                  from jobs j)
+    loop
+    i := 0;
+       DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+       DBMS_OUTPUT.PUT_LINE ('Nr angajati in firma: ' || v_job.nrTotalAng);
+       DBMS_OUTPUT.PUT_LINE ('Venituri totale in firma: ' || v_job.sumaTotalaVenituri);
+       DBMS_OUTPUT.PUT_LINE ('Media salariilor in firma: ' || v_job.medieTotalaVenituri);
+       DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+       DBMS_OUTPUT.PUT_LINE ('Job '||v_job.Titlu);
+       DBMS_OUTPUT.PUT_LINE ('Nr angajati cu acest job: ' || v_job.nrAng);
+       DBMS_OUTPUT.PUT_LINE ('Venituri totale angajati cu acest job: ' || v_job.TotalVenituri);
+       DBMS_OUTPUT.PUT_LINE ('Media salariilor angajatilor cu acest job: ' || v_job.MedieVenituri);
+       DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+
+       for v_ang in (select last_name nume, salary salariu
+                     from employees e
+                     where job_id = v_job.Job)
+       loop
+        i := i+1;
+            dbms_output.put_line(i || '. ' || v_ang.nume || ' ' || v_ang.salariu);
+       end loop;
+    end loop;
+end;
+/

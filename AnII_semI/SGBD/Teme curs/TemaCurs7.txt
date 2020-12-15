@@ -1,0 +1,13 @@
+--5.11
+->In sesiunea 1 avem FOR UPDATE care blocheaza linia respectiva. 
+->In sesiunea 2 folosim NOWAIT care incearca sa acceseze linia blocata, neasteptand ca prima sesiune sa se
+incheie prin permanentizarea cu commit.
+->Daca scoatem NOWAIT din sesiunea 2 rularea si implicit selectia liniei cerute va fi amanata pana ce va fi 
+finalizata sesiunea 1 cu commit. Dupa ce se da comanda commit se face termina si sesiunea 2.
+
+--5.12
+->Daca se efectueaza commit in interiorul loop-ului orice fetch de dupa va esua pentru ca dupa permanentizarea
+modificarilor facut sunt eliberate resursele alocate.
+->Se poate modifica si o alta coloana in afara de cea specificata in for update.
+->Daca nu se specifica nicio coloana la for update nu sunt intampinate probleme la rularea instructiunilor, 
+coloanele sunt modificate cu succes in interiorul iterarii.

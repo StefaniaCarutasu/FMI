@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+
+void collatz (int *buffer, int n)
+{
+    buffer[0] = n;
+    int i = 1;
+    while(n != 1)
+    {
+        if(n % 2)
+            n = 3 * n + 1;
+        else
+            n = n / 2;
+       buffer[i] = n;
+       i++;
+    }
+    return; 
+}
+
+int main(int argc, char *argv[])
+{
+    char shm_name[] = "/collatzshm";
+    int shm_fd;
+
+    shm_fd = shm_open (shm_name, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+    if (shm_fd < 0)
+    {
+        perror(NULL);
+        return errno;
+    }
+    size_t shm_size = 1024 * argc;
+
+    if(ftruncate(shm_fd, shm_size) == -1)
+    {
+        perror(NULL);
+        shm_unlink(shm_name);
+        return errno;
+    }
+
+    printf("Starting parent %d\n",getpid());
+    int i = 1;
+
+    while (i < argc)
+    {
+        int n = atoi(argv[i]);
+        pid_t child = fork();
+
+        if(child < 0)
+            return errno;
+        else
+        {
+            if(child == 0)
+            {
+                int *addr = mmap(0, shm_size, PROT_WRITE, MAP_SHARED, shm_fd, 0);
+                if(addr == MAP_FAILED)
+                {
+                    perror(NULL);
+                    shm_unlink(shm_name);
+                    return errno;
+                }
+
+                int *buffer = addr + (i - 1) * 1024/ sizeof(int);
+                collatz(buffer, n);
+                printf("Pid parinte: %d\nPid copil: %d\n", getppid(), getpid());
+                return 0;
+            }
+        }
+      i++;  
+    }
+
+    while(wait(NULL) > 0); //asteapta toti copiii
+    int *addr = mmap(0, shm_size, PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    for(int i = 1; i < argc; i ++)
+    {
+        int * buffer = addr+(i-1)*1024/sizeof(int);
+        int j = 0;
+        printf("%d: ", buffer[j]);
+        while(buffer[j] != 1)
+        {
+            printf("%d ", buffer[j]);
+            j++;
+        }
+        printf("1\n");
+    }
+
+    munmap(addr, shm_size);
+    shm_unlink("/collatz");
+    return 0;
+    
+}

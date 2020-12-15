@@ -44,5 +44,5 @@ patrateImpare :: [Int] -> [Int]
 patrateImpare lista = filter odd [x^2 | x <- lista]
 
 --3
-patratePozImpare :: [Int] -> [Int]
-patratePozImpare lista = filter odd (snd zip lista [1..]) [x*2 | x <- lista]
+patratePozImpare :: [Integer] -> [Integer]
+patratePozImpare l = map (^2) [fst x | x <- zip l [0..], snd x `mod` 2 == 1]

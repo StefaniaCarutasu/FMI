@@ -1,0 +1,3 @@
+Am implementat o baza de date pentru gestiunea activitatilor dintr-un spital.
+Pentru aceasta am creat entitati pentru pacienti, doctori, laboratoare de analize, camere, programul
+operatiilor, fise de internare si rezultatele analizelor medicale.

@@ -53,9 +53,7 @@ test_rmchars = rmCharsRec ['a'..'l'] "fotbal" == "ot"
 
 --c
 rmCharsFold :: String -> String -> String
-rmCharsFold s1 s2 = foldr rmChar s1 s2
---rmCharsFold::String->String->String
---rmCharsFold cuv1 cuv2=foldr rmChar cuv2 cuv1
+rmCharsFold s1 s2 = foldr rmChar s2 s1
 
 --II
 

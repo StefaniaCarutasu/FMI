@@ -1,0 +1,46 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <pthread.h>
+#include <fcntl.h>
+#include <string.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdlib.h>
+
+void *inversare(void *t)
+{
+    char *text = t;
+    char *copie = (char*)malloc(strlen(text)+1);
+    int i = 0;
+    int l = strlen(text) - 1;
+    while(i < strlen(text))
+    {
+        copie[i] = text[l];
+        i++;
+        l--;
+    }
+    copie[i] = '\0';
+
+    return copie;
+}
+
+int main(int argc, char *argv[])
+{
+    pthread_t thr;
+    char *arg = argv[1];
+    char *inv;
+    if(pthread_create (&thr, NULL, inversare, arg ))
+    {
+        perror(NULL);
+        return errno;
+    }
+
+    if(pthread_join(thr, &inv))
+    {
+        perror(NULL);
+        return errno;
+    }
+
+    printf("Inainte de inversare: %s\nDupa inversare: %s\n", arg, inv);
+    return 0;
+}

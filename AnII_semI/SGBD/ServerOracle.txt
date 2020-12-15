@@ -1,0 +1,15 @@
+User-oracledb
+parola user-oracledb
+
+database file location : E:\app\oradata
+pluggable database name: pdborcl
+
+global database name: gdborcl
+parola: Oracl3db
+
+Oracle Enterprise Manager Database Express URL: https://localhost:5500/em
+
+=========================
+
+Cause - The plug-in failed in its perform method  Action - Refer to the logs or contact Oracle Support Services.  Log File Location
+C:\Program Files\Oracle\Inventory\logs\InstallActions2020-11-25_09-10-39PM\installActions2020-11-25_09-10-39PM.log
