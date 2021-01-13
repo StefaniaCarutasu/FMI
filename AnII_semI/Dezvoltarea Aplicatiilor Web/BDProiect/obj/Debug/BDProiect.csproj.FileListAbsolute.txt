@@ -1,0 +1,170 @@
+C:\Users\Stefi\source\repos\BDProiect\bin\BDProiect.dll.config
+C:\Users\Stefi\source\repos\BDProiect\bin\BDProiect.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\BDProiect.pdb
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csc.exe
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csc.exe.config
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csc.rsp
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csi.exe
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csi.exe.config
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\csi.rsp
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.AppContext.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Console.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.IO.Compression.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Net.Http.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.ValueTuple.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\vbc.exe
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\vbc.exe.config
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\vbc.rsp
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\VBCSCompiler.exe
+C:\Users\Stefi\source\repos\BDProiect\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Stefi\source\repos\BDProiect\bin\Antlr3.Runtime.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\EntityFramework.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\EntityFramework.SqlServer.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\Newtonsoft.Json.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Helpers.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Mvc.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Optimization.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Razor.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.Razor.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\WebGrease.dll
+C:\Users\Stefi\source\repos\BDProiect\bin\EntityFramework.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\EntityFramework.SqlServer.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Helpers.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Mvc.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Optimization.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.Razor.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\System.Web.WebPages.Razor.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\Newtonsoft.Json.xml
+C:\Users\Stefi\source\repos\BDProiect\bin\Antlr3.Runtime.pdb
+C:\Users\Stefi\source\repos\BDProiect\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.csprojAssemblyReference.cache
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.csproj.CoreCompileInputs.cache
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.csproj.CopyComplete
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.dll
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.pdb
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.Migrations.Initial.resources
+C:\Users\Stefi\source\repos\BDProiect\obj\Debug\BDProiect.csproj.GenerateResource.cache
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\BDProiect.dll.config
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\BDProiect.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\BDProiect.pdb
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csc.exe
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csc.exe.config
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csc.rsp
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csi.exe
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csi.exe.config
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\csi.rsp
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.AppContext.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Collections.Immutable.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Console.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Globalization.Calendars.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.IO.Compression.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.IO.FileSystem.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Net.Http.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Net.Sockets.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Reflection.Metadata.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.ValueTuple.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Xml.XPath.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\vbc.exe
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\vbc.exe.config
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\vbc.rsp
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\VBCSCompiler.exe
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\roslyn\VBCSCompiler.exe.config
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Antlr3.Runtime.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\EntityFramework.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\EntityFramework.SqlServer.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Microsoft.Web.Infrastructure.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Newtonsoft.Json.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Helpers.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Mvc.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Optimization.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Razor.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.Deployment.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.Razor.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\WebGrease.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\EntityFramework.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\EntityFramework.SqlServer.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Helpers.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Mvc.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Optimization.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.Razor.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.Deployment.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\System.Web.WebPages.Razor.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Newtonsoft.Json.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Antlr3.Runtime.pdb
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.csprojAssemblyReference.cache
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.Migrations.Initial.resources
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.csproj.GenerateResource.cache
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.csproj.CoreCompileInputs.cache
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.csproj.CopyComplete
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.dll
+C:\Facultate\Anul 2\Proiect Daw\WebApps\BDProiect\obj\Debug\BDProiect.pdb

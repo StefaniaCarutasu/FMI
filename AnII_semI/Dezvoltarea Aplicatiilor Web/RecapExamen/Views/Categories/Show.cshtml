@@ -1,0 +1,21 @@
+﻿@model RecapExamen.Models.Category
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+<p>@Model.CategoryName</p>
+<br />
+
+@using (Html.BeginForm(actionName: "Delete", controllerName: "Categories", method: FormMethod.Post, routeValues: new { id = @Model.CategoryId }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+
+    <button class="btn btn-danger" type="submit">Sterge categoria</button>
+}
+
+<br />
+<br />
+<a class="btn btn-info" href="/Categories/Index">Afisare lista categorii</a>

@@ -1,5 +1,5 @@
---creare PACIENT
-CREATE TABLE pacient (
+--creare PATIENT
+CREATE TABLE patient (
 id number(5) primary key,
 last_name varchar2(25) not null,
 first_name varchar2(25) not null,
@@ -11,6 +11,9 @@ address varchar2(40));
 
 alter table pacient
 modify email varchar2(30);
+
+alter table patient
+drop column room_id;
 
 --creare DOCTOR
 create table doctor(
@@ -93,15 +96,19 @@ modify lab_assistant number(5);
 alter table laboratory
 add constraint lab_assistant_fk FOREIGN KEY (lab_assistant) references doctor(id) on delete cascade;
 
-create table operations (
-pacient_id number(5),
-doctor_id number(5),
-anestethist_id number(5),
+create table operation (
+id number(5) primary key,
+patient_id number(5),
 operation_room NUMBER(4),
 operation_date date,
 operation_time varchar2(10),
-foreign key (pacient_id) references pacient(id),
-foreign key (doctor_id) references doctor(id));
+foreign key (patient_id) references patient(id));
+
+create table operation_doctor (
+doctor_id number(5),
+operation_id number(5),
+foreign key (doctor_id) references doctor(id),
+foreign key (operation_id) references operation(id));
 
 create table pacient_admission (
 pacient_id number(5),

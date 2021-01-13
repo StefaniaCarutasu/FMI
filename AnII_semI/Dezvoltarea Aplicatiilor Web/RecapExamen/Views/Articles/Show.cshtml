@@ -1,0 +1,34 @@
+﻿@model RecapExamen.Models.Article
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+<br />
+<a href="/Articles/Index">Inapoi la articole</a>
+<br />
+<a class="btn btn-info" href="/Articles/New">Adauga articol</a>
+<br /><br />
+
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>@Model.Title</strong></div>
+    <div class="panel-body">
+        Continut articol:
+        <br />
+        @Model.Content
+        <br />
+        <i class="glyphicon glyphicon-globe"></i> @Model.Category.CategoryName
+        <br />
+        <hr />
+        <div class="panel-footer">
+            <a class="btn btn-success pull-left" href="/Articles/Edit/@Model.Id">Modifica articol</a>
+
+            @using (Html.BeginForm(actionName: "Delete", controllerName: "Articles", method: FormMethod.Post, routeValues: new { id = @Model.Id }))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Delete)
+                <button class="btn btn-danger pull-right" type="submit">Sterge articol</button>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

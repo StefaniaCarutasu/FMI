@@ -1,0 +1,107 @@
+The SchedSim Project, version 1
+John Pecarina
+August 2, 2015
+CSCE 489
+
+//-----------------------------------------------------------
+Purpose
+//-----------------------------------------------------------
+
+This program simulates scheduling for single threaded processes on a single processor. We only focus on Thread Control Blocks (TCB) since thread scheduling is all we are concerned about. 
+
+//-----------------------------------------------------------
+Overview
+//-----------------------------------------------------------
+
+All operating systems are focused on progress for application processes. To do this efficiently for multiprogramming it must manage all process threads to get them on and off the CPU quickly. At the lowest level of abstraction, this is the job of the DISPATCHER. Thus, an operating system almost always contains some form of the following loop in its main function.
+
+while (true){
+	run_thread(); 	
+	// Runs a thread that is currently on the CPU
+	choose_next_thread();	
+	//Gets the next thread from the ready queue
+	save_state_of_CPU(cur_TCB);
+	//Removes the thread from the CPU and saves TCB state
+	load_state_of_CPU(new_TCB);	
+	//Loads state from new TCB onto the CPU
+}
+
+This simulator executes this loop in the Dispatcher class, which loads TCBs from an efficient queue data structure with fast transitions between them. We want to progress through all threads in a fair and/or timely manner. The randomization provided for this lab provides processes to be run on the CPU. The output needs to record queue siizes, the exact execution order and timing statistics which can be used for analysis of the scheduling algorithm.
+
+//-----------------------------------------------------------
+Machine environment
+//-----------------------------------------------------------
+
+A lot of the issues with real operating systems has been abstracted away to handle complexity. In particular, the CPU is emulated in software, like a process emulator/virtual machine might. This CPU only accepts 5 instructions, which are parsed to put values in the registers. The PC is the current index to a string/char array which contains all instructions for a particular program. The CPU also contains a rudimentary timer, that ticks once for every instruction parsed and 100 times for every context switch. Most importantly, we are not running our operating system on our own processor as we attempt to focus solely on scheduling concepts. Some of the CPU can be configured in the main header file.
+
+//-----------------------------------------------------------
+Dispatcher 
+//-----------------------------------------------------------
+
+The thread dispatcher is the core concept of the main loop on the first page. An OS must dispatch very quickly to be useful, so the efficiency and effectiveness of the dispatch loop is critical. The only useful work of an OS is done when an application’s thread is on the processor, so this is a good first step to learning the DISPATCHER.
+In run_thread(),we transfer control of the CPU to the thread that is already loaded on it by calling CPU.process(long _quantum).  It is assumed that when dispatcher comes to life, a thread is on the CPU – this is the idle thread. There is no effective PC for this process and it never runs out. As soon as the CPU starts it will run this thread for a short time and return. The argument long _quantum specifies its runtime duration. 
+Application threads cannot always run in an OS, which is why many high performance applications and real time systems will run on dedicated hardware as bare-metal applications. Everything that is done after the return of run_thread() and before it is called again is overhead. 
+
+The CPU return to DISPATCHER simulates an important facet of operating systems control. In a normal OS, there are three ways that the dispatcher get called
+
+1. The thread voluntarily yields the CPU – Threads a programmed through an API that forces yielding behavior when using I/O, systems calls and some semaphores. The call to yield the  processor is implicit when calling for I/O or it is explicit by calling wait() or yield(). In both cases, the operating system determines what caused the CPU to be yielded (interrupt handling) and executes the dispatcher to get the next thread.
+2. Time slot expiration – The time quantum protects a CPU from being overused by any particular process. The expiration of a time quantum yields the processor to the OS who transfers to the dispatcher to get the next thread.
+3. Current thread reaches termination – If the thread is at the end of execution, it will return to the OS who transfers to the dispatcher to get the next thread. The OS may need to do some extra garbage cleanup during the transfer phase. There is always some level of cleanup and maintenance going on when the CPU transfers to the OS, but this is again, abstracted away.
+
+In choose_next_thread(), we poll the SCHEDULER for the next thread in the system which returns a pointer to the next thread (TCBnode*) to run. The SCHEDULER does maintenance of its data structures as well. More on that in the next section.
+
+In save_state_of_CPU(cur_TCB), we replace the contents of the current TCB with the current values in the CPU registers. In load_state_of_CPU(new_TCB),  the old state of the CPU is replaced with new state from the new_TCB. This completes the context switch to the new thread. Finally, we loop to start, calling run_thread() yet again.
+
+//-----------------------------------------------------------
+Scheduler
+//-----------------------------------------------------------
+
+The purpose of a scheduler is to maintain various queues and implement algorithms to select the “best” thread to run next. The notion of what is best changes depending on system goals. Appropriately a number of algorithms can be employed to follow a particular decision making policy. These were discussed in the class lecture.
+
+Our SCHEDULER class contains 4 queues: NEW, READY, WAIT, and TERMINATED. The SCHEDULER simulates a short term scheduler that manages the selection of jobs from the ready queue and promotes jobs from the WAIT queue to the READY queue. The NEW queue is merely a holding area for newly created and started threads. SCHEDULER does not control access to the NEW queue and it adds all new threads to the READY queue in order if they can fit. The TERMINATED queue is for all completed threads, which some other function will need to clean up but is not our concern. 
+
+The SCHEDULER calls its main control loop when it is invoked by run_scheduler( ) as:
+SCHEDULER::run_scheduler( ) {
+	1:add_wait_threads( );
+		//fills the READY queue from the WAIT queue, this should be done at random
+	2:add_new_threads( );
+		//if space is available, fill the READY queue from the NEW queue
+	3:sort_ready_queue( );
+		//this sorts the READY queue and returns to dispatcher 
+}
+
+//-----------------------------------------------------------
+Configure, Compile and Usage Instructions
+//-----------------------------------------------------------
+
+To compile, unpack the code (if in an archive) and type make.
+
+If you want to change variables in the simulation, go to SchedSim.h and make changes.
+Afterwards, recompile the code as before.
+
+Usage is based on the student's purposes, but this first iteration needs 
+some implementation to hook the queues and threads to harvest information.
+
+//-----------------------------------------------------------
+Development Notes
+//-----------------------------------------------------------
+
+As is, 
+- All threads go to the new queue during init()
+- Minimal code is required to move them to the ready queue and this can be done the first time run_scheduler executes from init()
+- How the threads move from NEW to READY determines the scheduling algorithm
+- The dispatcher default runs in FCFS (equivalently RR with QUANTUM = INFINITY)
+because the head is dequeued in choose_next_thread()
+- The scheduler/dispatcher can run as RR if QUANTUM is reduced 
+- Some redesign may have the dispatcher iterate the queue to find the "best" one instead
+of taking the head
+- Some redesign may implement a multi level queue
+- Some redesign may implement a four-threaded approach 
+	1: dispatcher/scheduler 
+	2: long term scheduler (to add a new thread at any time to READY)
+	3: random thread generator (to add a new thread at any time to NEW)
+	4: random thread wakeup (to transition a thread from WAIT to READY)
+- Might also choose to add preemption
+
+
+

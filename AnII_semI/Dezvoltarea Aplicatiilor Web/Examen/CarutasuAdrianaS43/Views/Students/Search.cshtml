@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<div class="pull-right" style="display: inline-flex">
+    <div class="container" style="float:left">
+        <div class="pull-right">
+            <br />
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <form class="card card-sm" method="GET">
+                        <div class="card-body row no-gutters align-items-center" style="display:inline-flex">
+                            <div class="col-auto" style="float:right; width:200px; height:100px">
+                                <i class="fas fa-search h4 text-body"></i>
+                            </div>
+                            <!--end of col-->
+                            <div class="col" style="float:right; width:200px">
+                                <input class="form-control form-control-lg form-controlborderless" type="text" name="searchName" style="height: 45px"
+                                       value="@ViewBag.SearchName"
+                                       placeholder="Cauta dupa nume">
+                            </div>
+                            <div class="col" style="float:right; width:200px">
+                                <input class="form-control form-control-lg form-controlborderless" type="text" name="searchDomain" style="height: 45px"
+                                       value="@ViewBag.SearchDomain"
+                                       placeholder="Cauta dupa domeniu">
+                            </div>
+                            <!--end of col-->
+                            <div class="col-auto" style="float:left; padding-left:3px">
+                                <button class="btn btn-lg btn-success"
+                                        type="submit">
+                                    Search
+                                </button>
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        <!--end of col-->
+                </div>
+                </form>
+            </div>
+            <!--end of col-->
+        </div>
+        <!--end of col-->
+    </div>
+    @if (ViewBag.SearchName != ""  && ViewBag.SearchDomain != "" && ViewBag.CountStudents > 0)
+    {
+        <div class="dropdown pull-right" style="float: right; width: 200px; height: 30px; padding-top:35px; padding-left: 5px">
+            <button class="btn btn-info">Rezultatele cautarii</button>
+            <div class="dropdown-content">
+                @foreach (var student in ViewBag.StudentsList)
+                {
+                    <li class="dropdown-item" style="list-style-type: none">
+                        <a href="/Students/Show/@student.Id" class="glyphicon glyphicon-user"> @student.Nume</a>
+                        <br />
+                    </li>}
+            </div>
+        </div>
+    }
+    else if (ViewBag.Gasit == 0)
+    {
+        
+        <div style="padding-left: 10px"><br /><br /><strong>Nu s-au gasit rezultate!</strong></div>
+    }
+</div>

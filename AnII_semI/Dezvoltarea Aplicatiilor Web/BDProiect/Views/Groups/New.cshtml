@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+<br />
+<a class="btn btn-primary pull-right" href="/Groups/Index">Inapoi la grupuri</a>
+<a class="btn btn-primary pull-right" href="/Posts/Index">Inapoi la postari</a>
+<br />
+<form method="post" action="/Groups/New">
+    @Html.Label("GroupName", "Numele grupului")
+    <br />
+    @Html.TextBox("GroupName", null, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessage("GroupName", null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("GroupDescription", "Descriere grup")
+    <br />
+    @Html.TextArea("GroupDescription", null, new { @class = "form-control" })
+
+    @Html.ValidationMessage("GroupDescription", "", new { @class = "text-danger" })
+    <br />
+    <button class=" btn btn-success" type="submit">Adauga grup</button>
+</form>
+

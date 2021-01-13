@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h3>@ViewBag.Message</h3>
+<br />
+<h2>Afisare studenti</h2>
+<br />
+<a class="btn btn-info" href="/Students/New">Adauga student</a>
+<br /><br />
+
+@foreach(var student in ViewBag.Students)
+{
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        Nume student:
+        <strong>@student.Nume</strong>
+    </div>
+    <div class="panel panel-body">
+        Email: @student.Email
+        <br />
+        @{ 
+            var dataNastere = student.DataNastere.ToString("dd/MM/yyyy");
+        } 
+        Data nasterii: @dataNastere
+        <br />
+        Domeniu: @student.Domain.Denumire
+        <br />
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-success" href="/Students/Show/@student.Id">Afisare student</a>
+    </div>
+</div> 
+}

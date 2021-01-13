@@ -1,0 +1,27 @@
+﻿@model BDProiect.Models.Group
+@{
+    ViewBag.Title = "Show";
+}
+
+<br />
+<br />
+<a class="btn btn-primary pull-right" href="/Groups/Index">Inapoi la grupuri</a>
+<a class="btn btn-primary pull-right" href="/Posts/Index">Inapoi la postari</a>
+<br />
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>@ViewBag.Group.GroupName</strong></div>
+    <div class="panel-body">
+        Descriere grup: <br /><strong>@ViewBag.Group.GroupDescription</strong>
+        <br /><br />
+        <a class="btn btn-success pull-left" href="/Groups/Edit/@ViewBag.Group.GroupId">Modifica grup</a>
+        <form method="post" action="/Groups/Delete/@ViewBag.Group.GroupId">
+            @Html.HttpMethodOverride(HttpVerbs.Delete)
+            <button class="btn btn-danger pull-right" type="submit">Sterge grup</button>
+        </form>
+    </div>
+</div>
+
+
+
+

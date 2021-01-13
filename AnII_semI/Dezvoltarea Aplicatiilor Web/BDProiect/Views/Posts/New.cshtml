@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h1>@ViewBag.Message</h1>
+<br />
+<button class="btn btn-primary" onclick="window.location.href='/Posts/Index'">Inapoi la postari</button>
+<br />
+<h2>Adaugare postare</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Posts"))
+{
+   
+    @Html.Label("Content", "Continut postare")
+    <br />
+    @Html.TextArea("Content", null, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessage("Content", "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-success" type="submit">Adauga postare</button>
+}

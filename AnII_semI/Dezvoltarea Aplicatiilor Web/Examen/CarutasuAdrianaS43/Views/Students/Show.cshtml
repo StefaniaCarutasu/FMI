@@ -1,0 +1,41 @@
+﻿@model CarutasuAdrianaS43.Models.Student
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.Nume</h2>
+
+<br /><br />
+<a href="/Students/Index">Inapoi la lista de studenti</a>
+<br />
+<a class="btn btn-info" href="/Students/New">Adauga student</a>
+<br /><br />
+
+      <div class="panel panel-default">
+          <div class="panel panel-heading">
+              Nume student:
+              <strong>@Model.Nume</strong>
+          </div>
+          <div class="panel panel-body">
+              Email: @Model.Email
+              <br />
+              @{
+                  var dataNastere = Model.DataNastere.ToString("dd/MM/yyyy");
+              }
+              Data nasterii: @dataNastere
+              <br />
+              Domeniu: @Model.Domain.Denumire
+              <br />
+          </div>
+          <div class="panel-footer">
+              <a class="btn btn-success pull-left" href="/Students/Edit/@Model.Id">Modifica student</a>
+
+              @using (Html.BeginForm(actionName: "Delete", controllerName: "Students", method: FormMethod.Post, routeValues: new { id = @Model.Id }))
+              {
+                  @Html.HttpMethodOverride(HttpVerbs.Delete)
+                  <button class="btn btn-danger pull-right" type="submit">Sterge student</button>
+              }
+              <div class="clearfix"></div>
+          </div>
+
+      </div>

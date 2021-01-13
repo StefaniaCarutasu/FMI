@@ -1,0 +1,36 @@
+﻿@model IncercareCuBd.Models.Article
+
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Articles"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <br />
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.Label("Title", "Titlu Articol")
+    <br />
+    @Html.EditorFor(m => m.Title)
+    @Html.ValidationMessage("Title", null, new { @class = "text-danger" })
+    <br />
+    <br />
+
+    @Html.Label("Content", "Continut Articol")
+    <br />
+    @Html.Editor("Content", new { htmlAtributes = new { @class = "form-control" } })
+    @Html.ValidationMessage("Content", null, new { @class = "text-danger" })
+    <br />
+    <br />
+
+    @Html.Label("Selectati categoria")
+
+    @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categ, "Value", "Text"), "Selectati categoria", new { @class = "form-control" })
+    @Html.ValidationMessage("Category", null, new { @class = "text-danger" })
+    <br />
+
+    <button class="btn btn-success" type="submit">Modifica articol</button>
+}

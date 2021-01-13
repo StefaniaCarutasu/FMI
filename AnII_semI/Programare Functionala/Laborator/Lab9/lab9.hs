@@ -59,10 +59,6 @@ checkExp :: Expr -> Bool
 checkExp expr = evalExp(expr) == evalArb(expToArb(expr))
 
 
-
-
-
-
 class Collection c where
   empty :: c key value
   singleton :: key -> value -> c key value
@@ -79,13 +75,35 @@ class Collection c where
 newtype PairList k v
   = PairList { getPairList :: [(k, v)] }
 
-data SearchTree key value
+{-data SearchTree key value
   = Empty
   | Node
       (SearchTree key value) -- elemente cu cheia mai mica 
       key                    -- cheia elementului
       (Maybe value)          -- valoarea elementului
       (SearchTree key value) -- elemente cu cheia mai mare
+
+type Key = Int
+type Value = String-}
+
+{-data SearchTree key value
+  = Empty
+  | Node1
+    (SearchTree key value) -- elemente cu cheia mai mica
+    Key -- cheia elementului
+    (Maybe value) -- valoarea elementului
+    (SearchTree key value) -- elemente cu cheia mai mare
+type Key = Int
+type Value = String-}
+
+data SearchTree 
+  = Empty
+  | Node1
+      SearchTree -- elemente cu cheia mai mica
+      Key -- cheia elementului
+      (Maybe Value) -- valoarea elementului
+      SearchTree
+  deriving Show
 
 type Key = Int
 type Value = String

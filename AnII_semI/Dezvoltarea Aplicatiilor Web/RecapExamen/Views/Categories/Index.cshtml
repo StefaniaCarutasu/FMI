@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h3>@ViewBag.Message</h3>
+<h2>Categorii</h2>
+<br />
+<br />
+<a class="btn btn-primary" href="/Categories/New">Adauga categorie</a>
+<a class="btn btn-primary" href="/Articles/Index">Lista articole</a>
+
+<br /><br />
+@foreach (var categ in ViewBag.Categories)
+{
+    <div class="panel panel-default">
+        <div class="panel panel-heading">
+            Nume categorie:
+            <br />
+            
+        </div>
+        <div class="panel panel-body"><strong>@categ.CategoryName</strong></div>
+        <div class="panel panel-footer">
+            <a class="btn btn-success" href="/Categories/Show/@categ.CategoryId">Afisare categorie</a> 
+            <br />
+        </div>
+    </div>
+}
+

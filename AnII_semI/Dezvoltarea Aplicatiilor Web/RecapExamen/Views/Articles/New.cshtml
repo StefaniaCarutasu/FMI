@@ -1,0 +1,32 @@
+﻿@model RecapExamen.Models.Article
+
+<h2>Adaugare articol</h2>
+<br />
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Articles"))
+{
+
+    @Html.Label("Title", "Titlu articol")
+    <br />
+    @Html.TextBox("Title", null, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Title, null, new { @class = "text-danger" })
+
+    <br />
+    <br />
+
+    @Html.Label("Content", "Continut articol")
+    <br />
+    @Html.TextArea("Content", null, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Content, null, new { @class = "text-danger" })
+
+    <br />
+    <br />
+
+    <label>Selectati categoria</label>
+    @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categ, "Value", "Text"),
+    "Selectati categoria", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.CategoryId, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-sm btn-success" type="submit">Adauga articol</button>
+}
