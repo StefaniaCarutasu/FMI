@@ -1,4 +1,3 @@
-
 f = open("graf.in")
 infinit = float('inf')
 

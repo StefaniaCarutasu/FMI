@@ -8,12 +8,13 @@ def citireGraf():
     i = f.readline()
     while i:
         x, y = i.split()
+        x, y = int(x), int(y)
         if x in d.keys():
             d[x].append(y)
-        else: d[x] = y
+        else: d[x] = [y]
         if y in d.keys():
             d[y].append(x)
-        else: d[y] = x
+        else: d[y] = [x]
         i = f.readline()
     return n, m, d
 

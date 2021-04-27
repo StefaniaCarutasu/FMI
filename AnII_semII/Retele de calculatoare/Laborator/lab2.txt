@@ -1,0 +1,73 @@
+Laborator 2 RC - 25.02.2021
+
+Cel mai mare IP - IP de broadcast (192.168.243.255): nu poate fi atribuit unui echipament
+
+-- cred ca trebuie sa le scriem in terminal la laptop?:
+enable
+configure terminal
+no ip domain-lookup -> pentru a evita erorile
+hostname swATENA
+no cdp run
+service password-encryption
+enable password ciscoenapa55
+enable secret ciscosecpa55
+banner motd # Vineri la ora 14:00 serverul va fi oprit !#     ->  informa despre anumite proceduri
+line console 0
+password ciscoconpa55
+login
+logging synchronous
+exec-timeout 25 10
+exit
+
+-- trecem sa configuram alte linii care ne permit accesul de la distanta
+line vty 0 15
+password ciscovtypa55
+login 
+logging synchronous
+exec-timeout 20 20
+exit
+exit
+
+-- pentru a salva: swATENA#copy running-config startup-config
+si apoi dam Enter la interogare
+
+-- proceduri de acces corect
+reload
+introducem parola: ciscoconpa55
+enable
+introducem parola: ciscosecpa55
+
+configure terminal 
+ctrl Z
+
+show clock
+clock set 10:54:25 25 Feb 2021
+
+configure terminal
+ip domain-name info.ro
+username Admin01 privilege 15 secret Admin01pa55
+line vty 0 15
+transport input ssh
+login local 
+exit
+crypto key generate rsa
+2048
+
+-- pentru a salva:
+exit
+copy running-config startup-config si apoi Enter
+
+
+
+configure terminal
+doar in swtichuri pot sa lucrez cu o interfata virtuala: interface vlan 1
+description Legatura cu ramura 192.168.243.0/24
+ip address 192.168.243.2 255.255.255.0 (urmatorul ip dupa gateway)
+no shutdown
+
+
+-- adaugam cablu copper straight intre switch si pc
+-- mergem la pc pe command prompt: 
+	ping 192.168.243.2 de 2 ori 
+	ssh -l Admin01 192.168.243.2 cu parola Admin01pa55
+	exit

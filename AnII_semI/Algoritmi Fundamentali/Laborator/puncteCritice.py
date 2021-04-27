@@ -61,6 +61,12 @@ print("Puncte critice: ")
 pc = puncteCritice(muchii, n)
 
 for i in range(1,n + 1):
-    if pc[i] == 1:
-        print(i, end=" ")
+    if pc[i] == 1 and len(muchii[i]) == 1:
+        if len(muchii[i]) == 1:
+            print(i, end=" ")
+        else:
+            for vec in muchii[i]:
+                if pc[vec] == 1:
+                    print(i, end = " ")
+                    break
 

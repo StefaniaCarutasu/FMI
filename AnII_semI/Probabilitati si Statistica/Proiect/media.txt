@@ -1,0 +1,82 @@
+#Media = integrala (-inf, +inf) xf(x) dx
+
+median <- function (va)
+{
+  
+  if(vadens_prob@nr_variabile == 1)       #cazul variabila unidimensionala
+  {
+    if(va@dens_prob@nr_intervale == 1)     #cazul o singura ramura
+    {
+      f <- va@dens_prob@legi[1]
+      minX <- va@dens_prob@intervale[1][1]
+      maxX <- va@dens_prob@intervale[1][2]
+      j <- integrate (abs(x) * f, lower = minX, upper = maxX, abs.tol = 0L)
+      if (j != Inf)
+      {
+        i <- integrate (x * f, lower = minX, upper = maxX, abs.tol = 0L)
+        return(i)
+      }
+      else
+        return ("Nu exista media")
+     
+    }
+    else                #cazul mai multe ramuri
+    {
+      integrala <- 0
+      for(i in 1:va@dens_pron@nr_intervale)
+      {
+        f <- va@dens_prob@legi[i]
+        minX <- va@dens_prob@intervale[i][1]
+        maxX <- va@dens_prob@intervale[i][2]
+        j <- integrate (x * f, lower = minX, upper = maxX, abs.tol = 0L)
+        if (j == Inf)
+          return("Nu exista media")
+        integrala <- i + integrate (x * f, lower = minX, upper = maxX, abs.tol = 0L)
+      }
+      
+      return(integrala)
+    }
+  }
+  else            #cazul variabila bidimensionala
+  {
+    if(va@dens_prob@nr_intervale == 1)          #o singura ramura
+    {
+      f <- va@dens_prob@legi[1]
+      minX <- va@dens_prob@intervale[1][1]
+      maxX <- va@dens_prob@intervale[1][2]
+      
+      minY <- va@dens_prob@intervale[1][3]
+      maxY <- va@dens_prob@intervale[1][4]
+      j <- integral2(abs(x) * abs(y) * f, minX, maxX, minY, maxY, sector = FALSE, abs.tol = 0L, singular = FALSE, vectorized = TRUE)
+      if(j != Inf)
+      {
+          i <- integral2(x * y * f, minX, maxX, minY, maxY, sector = FALSE, abs.tol = 0L, singular = FALSE, vectorized = TRUE)
+          return(i)
+      }
+      else 
+        return("Nu exista media")
+    }
+    else
+    {
+      integrala <- 0
+      for(i in 1:va@dens_pron@nr_intervale)
+      {
+        f <- va@dens_prob@legi[i]
+        minX <- va@dens_prob@intervale[i][1]
+        maxX <- va@dens_prob@intervale[i][2]
+        
+        minY <- va@dens_prob@intervale[1][3]
+        maxY <- va@dens_prob@intervale[1][4]
+        
+        j <- integral2(abs(x) * abs(y) * f, minX, maxX, minY, maxY, sector = FALSE, abs.tol = 0L, singular = FALSE, vectorized = TRUE)
+        if (j == Inf)
+          return("Nu exista media")
+        integrala <- integrala +  integral2(x * y * f, minX, maxX, minY, maxY, sector = FALSE, abs.tol = 0L, singular = FALSE, vectorized = TRUE)
+      }
+      
+      return(integrala)
+    }
+    
+  }
+  
+}

@@ -1,0 +1,619 @@
+CEA MAI BUNA A MEA DE PE KAGGLE (0.87120)
+
+#adaugam straturi
+model.add(Conv2D(64, kernel_size= 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Dropout(rate=.6))
+model.add(Conv2D(32, kernel_size= 3, activation = 'relu'))
+model.add(Dropout(rate=.6))
+model.add(Flatten())
+model.add(Dense(750, activation = "sigmoid"))
+model.add(Dropout(rate=.6))
+model.add(Dense(9, activation = 'softmax'))
+
+8936
+#adaugam straturi
+model.add(Conv2D(32, kernel_size= 5, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(AveragePooling2D())
+model.add(Conv2D(128, kernel_size= 5, activation = 'relu'))
+model.add(Dropout(rate=.5))
+model.add(Flatten())
+model.add(Dense(600, activation = "sigmoid"))
+model.add(Dropout(rate=.6))
+model.add(Dense(9, activation = 'softmax'))
+
+
+#compilarea modelului
+model.compile(optimizer = 'nadam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+
+#antrenarea modelului
+model.fit(train_imgs, y_train, validation_data = (validation_imgs, y_validation), batch_size=128, epochs = 11, shuffle=True)
+
+I'M ON TO SOMETHING BITCH
+
+#adaugam straturi
+model.add(Conv2D(32, kernel_size= 5, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(AveragePooling2D())
+model.add(Conv2D(64, kernel_size= 5, activation = 'relu'))
+model.add(Dropout(rate=.5))
+model.add(Flatten())
+model.add(Dense(600, activation = "sigmoid"))
+model.add(Dropout(rate=.6))
+model.add(Dense(9, activation = 'softmax'))
+
+#compilarea modelului
+model.compile(optimizer = 'nadam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+
+#antrenarea modelului
+model.fit(train_imgs, y_train, validation_data = (validation_imgs, y_validation), batch_size=128, epochs = 15, shuffle=True)
+
+
+1. Forma 1:
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+		
+	Epochs: 5
+	Acuratete maxima la epoch: 2
+	Acuratete maxima pe validare: 0.7682
+
+2. Forma 2:
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 3
+	Acuratete maxima la epoch: 2
+	Acuratete maxima pe validare: 0.7828
+
+
+3. Forma 3: 
+
+model.add(Conv2D(256, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 3
+	Acuratete maxima la epoch: 3
+	Acuratete maxima pe validare: 0.7780
+
+
+4. Forma 4:
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 3
+	Acuratete maxima la epoch: 3
+	Acuratete maxima pe validare: 0.7824
+
+5. Forma 5
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 4
+	Acuratete maxima la epoch: 3
+	Acuratete maxima pe validare: 0.7908
+
+	Epochs: 7
+	Acuratete maxima la epoch: 7
+	Acuratete maxima pe validare: 0.7596
+
+
+6. Forma 6
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 3, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(200, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 4
+	Acuratete maxima la epoch: 4
+	Acuratete maxima pe validare: 0.7774
+
+7. Forma 7
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 4
+	Acuratete maxima la epoch: 4
+	Acuratete maxima pe validare: 0.8030
+
+8. Forma 8
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Epochs: 5
+	Acuratete maxima la epoch: 2
+	Acuratete maxima pe validare: 0.8044
+9. Forma 9 
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+10. Forma 10
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+11. Forma 11
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7816
+	Min accuracy: 0.7434
+
+12. Forma 12 (0.79280 pe kaggle)
+
+model.add(Conv2D(128, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7874
+	Min accuracy: 0.7064
+
+13. Forma 13
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7712
+	Min accuracy: 0.7958
+
+14. Forma 14 (0.79360 kaggle)
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(200, activation = "relu"))
+model.add(Dense(200, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7398
+	Min accuracy: 0.7952
+
+	
+15. Forma 15
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Min accuracy: 0.7526
+	Max accuracy: 0.7970
+
+16. Forma 16
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(900, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7826
+	Min accuracy: 0.6948
+
+17. Forma 17
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7970
+	Min accuracy: 0.7316
+
+18. Forma 18
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8028
+	Min accuracy: 0.7608
+
+19. Forma 19
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7900
+	Min accuracy: 0.7382
+
+20. Forma 20
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7900
+	Min accuracy: 0.7294
+
+21. Forma 21
+
+Normalizare minmax
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(400, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8046
+	Min accuracy: 0.6996
+
+22. Forma 22
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8198
+	Min accuracy: 0.7556
+
+23. Forma 23
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(800, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(600, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8140
+	Min accuracy: 0.7610
+25. Forma 25
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(100, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8058
+	Min accuracy: 0.6976
+	
+26. Forma 26
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8158
+	Min accuracy: 0.7490
+
+27. Forma 27
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8110
+	Min accuracy: 0.7680
+
+28. Forma 28
+
+Normalizare minmax
+
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(16, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(300, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.7934
+	Min accuracy: 0.7342
+
+29. Forma 29
+
+Normalizare minmax
+
+model.add(Conv2D(256, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(23, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8124
+	Min accuracy: 0.7510
+
+30. Forma 30
+
+Normalizare minmax
+
+model.add(Conv2D(256, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.8050
+	Min accuracy: 0.7808
+	First accuracy: 0.7808
+
+31. Forma 31
+
+Normalizare minmax
+
+model.add(Conv2D(256, kernel_size = 2, activation = 'relu', input_shape = (32, 32, 1)))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(128, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(64, kernel_size = 2, activation = 'relu'))
+model.add(Conv2D(32, kernel_size = 2, activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(700, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(500, activation = "relu"))
+model.add(Dense(9, activation = 'softmax'))
+
+	Max accuracy: 0.
+	Min accuracy: 0.
+	First accuracy: 0.

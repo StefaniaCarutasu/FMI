@@ -40,7 +40,7 @@ def bfs(source, target, parent, nrNoduri, matriceAdiacenta):
 
 def FordFulkerson(source, target, nrNoduri, matriceAdiacenta):
     parent = [0] * (nrNoduri + 1)
-    maxFlow = 0
+    maxFlow = 1
     while bfs( source, target, parent, nrNoduri, matriceAdiacenta):
         pathFlow = float("Inf")
         t = target
@@ -67,6 +67,6 @@ def FordFulkerson(source, target, nrNoduri, matriceAdiacenta):
     return maxFlow
 
 n, m, muchiiCapacitati, matriceAdiacenta = citireMuchiiPond()
-fm = FordFulkerson(1, 6, n, matriceAdiacenta)
+fm = FordFulkerson(1, 3, n, matriceAdiacenta)
 print("Fluxul maxim este: ", fm)
     
