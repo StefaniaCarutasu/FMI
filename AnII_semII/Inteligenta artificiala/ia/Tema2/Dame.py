@@ -9,13 +9,12 @@ ROWS, COLS = 8, 8
 SQUARE_SIZE = WIDTH // COLS
 
 # setez valorile pentru culorile pe care le folosesc
-RED = (255, 0, 0)
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-BLUE = (0, 0, 255)
-GREY = (128, 128, 128)
+RED = (255, 0, 0)       #pentru a ilustra o piesa rege
+WHITE = (255, 255, 255)     #piesa si patratel
+BLACK = (0, 0, 0)       #piesa si patratel
+BLUE = (0, 0, 255)      #pentru a ilustra user ului posibilele mutari
+GREY = (128, 128, 128)      #pentru a putea distinge piesele negre pe patratele negre
 
-FPS = 60
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Carutasu Stefania: Dame')
@@ -720,7 +719,6 @@ def get_with_mouse(pos):
 def main():
     pygame.init()
     run = True
-    clock = pygame.time.Clock()
     game = Game(WINDOW, "WHITE")
     color, algorithm, depth, game_type = deseneaza_alegeri(WINDOW, game)
     if color == "BLACK":
@@ -729,7 +727,7 @@ def main():
     else:
         user_color = WHITE
         computer_color = BLACK
-
+    #am jocul computer vs player
     if game_type == "cp":
         initial_time_game = int(round(time.time() * 1000))
         #initializez pentru a putea afisa la final statisticile
@@ -742,7 +740,6 @@ def main():
         nr_runde = 0
 
         while run:
-            clock.tick(FPS)
             if game.turn == computer_color:
                 t_inainte = int(round(time.time() * 1000))
                 if algorithm == "alphabeta":
@@ -807,10 +804,10 @@ def main():
         final_time_game = int(round(time.time() * 1000))
         print("\nTimpul total de joc:", final_time_game - initial_time_game, "milisecunde")
         pygame.quit()
-
+    #am jocul player vs player
     elif game_type == "pp":
         while run:
-            clock.tick(FPS)
+
             if game.winner() != None:
                 if game.winner() == game.getBoard().computer_color:
                     print("Computer won")
@@ -827,10 +824,9 @@ def main():
                     game.select(row, col)
             game.update()
         pygame.quit()
-
+    #am jocul computer vs computer
     else:
         while run:
-            clock.tick(FPS)
             if game.winner() != None:
                 if game.winner() == game.getBoard().computer_color:
                     print("Computer won")
