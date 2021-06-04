@@ -5,8 +5,8 @@ from copy import deepcopy
 
 # setez valorile pentru numarul de coloane, randuri, inaltimea si latimea tablei de joc
 WIDTH, HEIGHT = 800, 800
-ROWS, COLS = 8, 8
-SQUARE_SIZE = WIDTH // COLS
+ROWS, COLUMNS = 8, 8
+SQUARE_SIZE = WIDTH // COLUMNS
 
 # setez valorile pentru culorile pe care le folosesc
 RED = (255, 0, 0)       #pentru a ilustra o piesa rege
@@ -18,7 +18,7 @@ GREY = (128, 128, 128)      #pentru a putea distinge piesele negre pe patratele 
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Carutasu Stefania: Dame')
-
+noMoves = 0
 
 class Piece:
     #Clasa care se ocupa de gestionarea pieselor
@@ -91,7 +91,7 @@ class Board:
         window.fill(BLACK)
         # alternez patrate albe cu patrate negre
         for row in range(ROWS):
-            for col in range(row % 2, COLS, 2):
+            for col in range(row % 2, COLUMNS, 2):
                 pygame.draw.rect(window, WHITE, (row * SQUARE_SIZE, col * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
 
     def move(self, piece, row, col):
@@ -126,7 +126,7 @@ class Board:
         """
         for row in range(ROWS):
             self.board.append([])
-            for col in range(COLS):
+            for col in range(COLUMNS):
                 if col % 2 == ((row + 1) % 2):
                     if row < 3:
                         self.board[row].append(Piece(row, col, self.computer_color))
@@ -144,7 +144,7 @@ class Board:
         """
         self.draw_squares(window)
         for row in range(ROWS):
-            for col in range(COLS):
+            for col in range(COLUMNS):
                 piece = self.board[row][col]
                 if piece != 0:
                     piece.draw(window)
@@ -167,7 +167,6 @@ class Board:
         if piece.color == self.computer_color or piece.king:
             moves.update(self._look_left(row + 1, min(row + 3, ROWS), 1, piece.color, left))
             moves.update(self._look_right(row + 1, min(row + 3, ROWS), 1, piece.color, right))
-        print( moves)
         return moves
 
     def _look_left(self, start, stop, step, color, left, skipped=[]):
@@ -235,7 +234,7 @@ class Board:
         moves = {}
         last = []
         for r in range(start, stop, step):
-            if right >= COLS:
+            if right >= COLUMNS:
                 break
 
             current = self.board[r][right]
@@ -317,15 +316,17 @@ class Game:
         self.turn = BLACK       #negrul muta primul asa ca initializez jocul cu negru
         self.valid_moves = {}
         self.window = window
+        self.noMoves = 0
 
     def DrawConsoleBoard(self):
+        self.noMoves += 1
         #Afisez in consola configuratia curenta a tablei de joc si cine muta
         if self.turn == self.board.computer_color:
             print("Computer moves")
         else: print("Player moves")
 
         for r in range(ROWS):
-            for c in range(COLS):
+            for c in range(COLUMNS):
                 if self.board.board[r][c] == 0:
                     print('#', end=" ")
                 elif self.board.board[r][c].color == BLACK:
@@ -533,7 +534,7 @@ def SimulateMove(piece, move, board, game, skip):
 
 def GetAllMoves(board, color, game):
     """
-    :param position: pozitia piesei pe care vreau sa o mut
+    :param board: configuratia actuala a tablei de joc
     :param color: culoarea piesei
     :param game: jocul actual
     :return: lista formata din configuratiile posibile ale tablei dupa ce se pot efectua mutarile posibile
@@ -546,7 +547,6 @@ def GetAllMoves(board, color, game):
             temp_piece = temp_board.get_piece(p.row, p.col)
             new_board = SimulateMove(temp_piece, move, temp_board, game, skip)
             moves.append(new_board)
-
     return moves
 
 
@@ -740,7 +740,17 @@ def main():
         nr_runde = 0
 
         while run:
-            if game.turn == computer_color:
+            #Verific daca mai am mutari posibile pentru culoarea curenta
+            #Daca culoarea curenta s-a blocat atunci opresc jocul
+            moreMoves = len(GetAllMoves(game.board, game.turn, game))
+            if moreMoves == 0:
+                if game.turn == computer_color:
+                    print("Computerul nu mai are mutari. A castigat playerul")
+                else:
+                    print("Playerul nu mai are mutari. A castigat computerul")
+                run = False
+
+            if game.turn == computer_color and moreMoves != 0:
                 t_inainte = int(round(time.time() * 1000))
                 if algorithm == "alphabeta":
                     value, new_board, nodes = AlphaBeta(float("-inf"), float("inf"), game.getBoard(), int(depth), computer_color, game, 0)
@@ -776,7 +786,7 @@ def main():
                 else: print("Player won")
                 run = False
 
-            if game.turn == user_color:
+            if game.turn == user_color and moreMoves != 0:
                 t_inainte = int(round(time.time() * 1000))
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -803,6 +813,7 @@ def main():
         print("Media de noduri: ", media_nodes / nr_runde)
         final_time_game = int(round(time.time() * 1000))
         print("\nTimpul total de joc:", final_time_game - initial_time_game, "milisecunde")
+        print("Numar total de mutari: ", game.noMoves)
         pygame.quit()
     #am jocul player vs player
     elif game_type == "pp":
