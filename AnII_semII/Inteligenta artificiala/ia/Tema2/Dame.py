@@ -743,7 +743,7 @@ def main():
             if game.turn == computer_color:
                 t_inainte = int(round(time.time() * 1000))
                 if algorithm == "alphabeta":
-                    value, new_board, nodes = AlphaBeta(-500, 500, game.getBoard(), int(depth), computer_color, game, 0)
+                    value, new_board, nodes = AlphaBeta(float("-inf"), float("inf"), game.getBoard(), int(depth), computer_color, game, 0)
                     game.computerMove(new_board)
                 else:
                     value, new_board, nodes = MiniMax(game.getBoard(), int(depth), computer_color, game, 0)
