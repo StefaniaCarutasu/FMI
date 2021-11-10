@@ -1,0 +1,71 @@
+#Pb3
+
+.data
+	n: .space 4
+	m1: .asciiz "Da"
+	m2: .asciiz "Nu"
+.text
+#perfect(n)
+main:
+li $v0, 5
+syscall
+sw $v0, n
+subu $sp, $sp, 4
+sw $v0, 0($sp)
+jal perfect
+addu $sp, $sp, 4
+beq $v0, 1, nrperfect
+la $a0, m2 # n nu e perfect
+li $v0, 4
+syscall
+li $v0, 10
+syscall
+
+nrperfect: # n e perfect
+la $a0, m1
+li $v0, 4
+syscall
+li $v0, 10
+syscall	
+#procedura
+perfect:
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+addi $fp, $sp, 4
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+lw $s0, 0($fp) # n
+li $t0, 1 #primul div posibil
+li $t2, 0 #suma
+divu $t3, $s0, 2 
+addi $t3, $t3, 1
+
+for:
+beq $t0, $t3, iesi #div=n/2+1
+rem $t4, $s0, $t0
+bgtz $t4, exit #daca nu se imparte trec peste
+adauga_suma:
+addu $t2, $t2, $t0 #daca s-a impartit l-am adaugat la suma
+exit:
+addu $t0, $t0, 1
+j for
+
+iesi:
+bne $t2, $s0, nu_egal
+e_egal:
+li $v0, 1
+lw $s0, -8($fp)
+lw $fp, -4($fp)
+addu $sp, $sp, 8
+jr $ra
+nu_egal:
+li $v0, 0
+lw $s0, -8($fp)
+lw $fp, -4($fp)
+addu $sp, $sp, 8
+jr $ra
+ 
+
+
+
+
