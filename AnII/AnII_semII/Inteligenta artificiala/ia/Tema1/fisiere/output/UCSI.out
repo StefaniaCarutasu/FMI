@@ -1,0 +1,13 @@
+Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7

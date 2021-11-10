@@ -1,0 +1,299 @@
+!! Daca sunt useri sub WIFI, nu facem pasul in care incadram userii intre puteri ale lui 2 pentru aceasta retea
+!! Atribui IP-urile in ordinea in care s-au dat, nu in ordine descrescatoare
+
+
+CONFIGURARE ECHIPAMENT PC-PT:
+1. Nume propriu 
+2. Schimb placa de retea:
+	-> click pe echipament
+	-> tab-ul Physical
+	-> scoatem echipamentul de sub tensiune (beculetul rosu) 
+	-> cu drag and drop scot placa de retea si o arunc unde scrie Modules 
+	-> iau cu drag and drop modulul PT-HOST-NM-1CGE
+	-> am pornit echipamentul (am pornit tensiunea)
+3.Tabul Desktop -> IP Configuration :
+	IPv4: ip din range-ul retelei din care face parte
+	Masca de retea: masca de retea a retelei din care face parte
+	Default Gateway: cel mai mic IP din range
+	DNS Server: cel mai mare IP din range-ul retelei cu server
+4. Tabul Desktop -> Configure Mail:
+	Your name: nume_echipament
+	Email Address: nume_echipament@INF0.RO
+	Server Information: IP-ul de la DNS Server
+	Username: nume_echipament
+	Parola: 123456
+	si apoi Save
+
+
+De la stanga la dreapta, de la mic la mare, din aproape in aproape.
+Cel mai apropiat echipament pe cale de interes in configurarea unei retele este echipamentul de nivel 2.
+
+
+
+CONFIGURARE SWITCH (echipament de nivel 2: aleg switch 2960): 
+-> ii dau nume propriu
+-> configurare: am nevoie de echipament al specialistului, adica adaug Laptop cu numele SERVICE
+-> avem nevoie de un cablu CONSOLE (albastru deschis) : laptop Service -> RS232, switch-> Console 
+-> din terminal Laptop Service, urmatoarea sintaxa:
+
+enter 				(trece in modul implicit: modul user)
+enable 				(trece in modul de lucru privilegiat)
+configure terminal 		(trece in modul de configurare globala)
+no ip domain-lookup 		(pentru a evita erorile)
+hostname nume_switch		
+no cdp run 			(inchid serviciul cdp pentru securitate) 
+-- PROCEDURA INCHIDERE INTERFETE CARE NU SUNT IN LUCRU (se face in mod configurare globala)
+-- adica pe ce interfete nu fac legaturi cu alte echipamente
+interface range fa 0/1-24
+shutdown 
+service password-encryption     (pentru criptarea parolelor)
+enable password ciscoenapa55	(parola slaba generala)
+enable secret ciscosecpa55	(parola mai puternica)
+banner motd # Vineri la ora 14:00 serverul va fi oprit !#     (informare utilizatori despre anumite proceduri)
+line console 0			(securizarea liniei de consola, ce facem acum; config-line)
+password ciscoconpa55		(parola consola)
+login				(aceasta parola sa-mi fie ceruta cand ma leg de echipament)
+logging synchronous
+exec-timeout 25 10		(sa se inchida echipamentul dupa un anumit timp de inactivitate)
+exit				(ma trece in modul de lucru anterior, de configurare globala)
+-- configuram alte linii care ne permit accesul de la distanta
+line vty 0 15		(sunt 16 -> trece in modul config-line)
+password ciscovtypa55	
+login 
+logging synchronous
+exec-timeout 20 20
+exit			(ma intoarce in modul de configurare globala)
+exit			(ma intoarce in modul de lucru privilegiat)
+# sau direct end in loc de 2 x exit
+clock set 10:54:25 25 Feb 2021
+configure terminal 
+-- instruim sa ne permita accesul de la distanta securizat
+ip domain-name info.ro
+username Admin01 privilege 15 secret Admin01pa55
+line vty 0 15  		 (accesul de la distanta il pot face prin linii vty; trece in config-line)
+transport input ssh	
+login local 		 (cerem parola)
+exit			 (trece in config global)
+crypto key generate rsa  (cripteaza munca)
+2048
+-- doar in swtichuri pot sa lucrez cu o interfata virtuala: 
+interface vlan 1
+description Legatura cu ramura ipN.A._ramura_din_care_face_parte_switch-ul
+ip address ip_switch masca_retea    (ip_switch = urmatorul ip dupa gateway din range)
+no shutdown
+exit
+-- procedura cu default gateway (in mod configurare globala)
+-- pentru a avea comunicare in intreaga topologie
+ip default-gateway ip_router_retea 
+-- pentru a salva (numai din modul privilegiat; este optional)
+exit
+copy running-config startup-config 
+Enter
+
+
+
+LEGATURA PC - SWITCH:
+-> cablu Copper Straight-Through (negru continuu) intre PC (GigabitEthernet0) si Switch (GigabitEthernet0/2)
+
+
+
+
+CONFIGURARE ROUTER 2911:
+- schimb modulul din tab-ul Physical in HWIC-2T cat mai aproape de sursa (in dreapta): imi pune serial 0/0/0 si serial 0/0/1
+- terminal Laptop Service:
+no
+enter 				
+enable 				
+configure terminal 		
+no ip domain-lookup 		
+hostname RBULGARIA		
+no cdp run
+
+-- procedura inchidere interfete nu fac legaturi cu alte echipamente
+-- folosesc giga 0, giga 0/1 si serial 0/0/0 
+interface range giga 0/2
+shutdown
+exit
+interface serial 0/0/1
+shutdown
+exit		
+
+service password-encryption     
+security passwords min-length 10		(doar pe router, nu si pe switch)
+login block-for 50 attempts 3 within 15		(doar pe router, nu si pe switch)
+enable password ciscoenapa55	
+enable secret ciscosecpa55	
+banner login # Accesul persoanelor neautorizate este strict interzis!#     (doar pe router, nu si pe switch)
+banner motd # Vineri la ora 14:00 serverul va fi oprit !# 
+line console 0			
+password ciscoconpa55		
+login				
+logging synchronous
+exec-timeout 25 10		
+exit				
+line vty 0 15		
+password ciscovtypa55	
+login 
+logging synchronous
+exec-timeout 20 20
+end		
+clock set 10:54:25 25 Feb 2021
+configure terminal 
+ip domain-name info.ro
+username Admin01 privilege 15 secret Admin01pa55
+line vty 0 15  		 
+transport input ssh	
+login local 		 
+exit			 
+crypto key generate rsa  
+2048
+exit
+configure terminal
+-- configurare interfete in care am legaturi
+interface giga 0/0
+description Legatura cu LAN ip_N.A._lan
+ip address ip_router masca_rectea
+no shutdown
+exit 
+interface giga 0/1
+description Legatura cu LAN ip_N.A.
+ip address ip_router masca_retea
+no shutdown
+exit
+interface serial 0/0/0
+description Legatura cu router RSERVER
+ip address ip_router_curent masca_retea
+no shutdown
+exit
+-- RUTARE la retelele cu care nu e direct conectat
+-- din modul de configurare globala
+ip route ip_N.A._retea_de_invatat masca_retea cale   (cale = pe ce interfata comunica)
+-- stie sa se duca dar nu stie sa se intoarca; trebuie sa configurez asa si restul de routere
+end
+copy running-config startup-config 
+Enter
+
+
+
+LEGATURA SWITCH - ROUTER:
+-> cablu negru continuu intre switch si router: giga0/1 - giga0/0(sau interfata pe care ai configurat-o in router)
+
+
+
+
+LEGATURA INTRE ROUTERE:
+- interfata serial intre routere (sa fie acelasi serial in ambele capete)
+- cablu serial DTE serial 0/0/0 - serial 0/0/0 (ceasul trebuie sa fie spre router-ul cu server)
+
+
+
+
+SERVER:
+Services -> HTTP: http off, https on
+	    DNS: dns on + name INFO.RO + address IP_server + add
+            EMAIL: domain name: INFO.RO + set
+                   user nume_echipament + password 123456 + apas pe '+' (pentru fiecare host/pc/laptop, inclusiv Server)
+
+
+
+
+SERVICIU DHCP IN ROUTER:
+	configure terminal 
+	ip dhcp excluded-address ip_default_gateway_lan start_ip
+	ip dhcp pool nume_lan
+	network ip_N.A._lan masca
+	default-router ip_default_gateway_lan
+	dns-server ip_server
+	domain-name info.ro
+	exit
+	exit
+
+
+
+
+SERVICIUL DHCP IN SERVER: 
+-- Server -> Services - DHCP: 
+        activam service ON
+	pool Name = lan_nume
+	default gateway = ip_default_gateway_lan_nume
+        dns server = ip_server
+        start ip address : ip de unde sa inceapa atribuirea dinamica de ip-uri (sa fie din range lan)
+        subnet mask : masca_retea
+        maximum number of users : 2^14-2-rezervarea
+	add
+
+Cu laptop service ma leg de Router lan_nume -> terminal :
+	enable
+	configure terminal
+        interface giga 0/0 (legatura cu reteaua)
+        ip helper-address ip_server
+	# sau  ip helper-address ip-ul_celmaiapropiat_legatura_router_dhcp
+        end
+
+Aduc un echipament de test: PC-PT Test
+- leg interfata giga0 (PC) de interfata fa24 (switch) pe care trebuie sa o activez in switch cu:
+interface fa 0/24 
+no shutdown
+- in PC aleg Ip Configuration DHCP
+
+
+
+
+
+
+CONFIGURARE WIFI (WRT300N):
+-- In Tab-ul GUI: 
+	Setup: Static IP 
+               completare IP WIFI, masca de retea si IP Server
+	       Save settings
+	Wireless -> Basic Wireless Settings: pun numele WIFI-ului si schimb channel la 11 + Save
+	Wireless Security -> WPA Personal + Save
+
+
+
+
+
+CONECTARE LAPTOP LA WIFI:
+- adaug Laptop
+- schimb placa de retea WPC300N
+- tab-ul Desktop -> WIFI -> Profiles -> New: nume_wifi
+                         -> Advanced Setup : nume_wifi -> next 
+                         -> Security: WPA2PERS 
+                         -> parola: 123456789 -> next salvam 
+                         -> connect to network
+
+
+
+
+TESTE:
+-- In command prompt pentru teste: 
+	ping ip            (verificare conexiune)    
+	ssh -l Admin01 ip  (verificare acces de la distanta)
+	Admin01pa55        (parola de acces)
+	exit               (ca sa ies din acces)
+-- testare serviciu FTP
+ftp ip_server
+username:cisco  (sau cel setat de tine)
+password:cisco  (sau cea setata de tine - de obicei 123456)
+dir
+get asa842-k8.bin
+
+-- verificare serviciu mail
+
+
+
+
+PAROLE: 
+- cand intru in linia de consola a unui echipament configurat:
+	ciscoconpa55 (introducem parola pentru ca suntem pe line console)
+	enable
+	ciscosecpa55 (introducem parola pentru a intra in modul privilegiat)
+
+
+
+
+ALTE COMENZI:
+- show run                        -> ca sa vad ce am setat
+- no ip address ip_adresa_veche   -> sterge adresa ip dintr-o interfata
+- show ip route                   -> imi da tabela de rutare
+- no ip route ip masca cale       -> schimb rutarea (scriu intreaga sintaxa)

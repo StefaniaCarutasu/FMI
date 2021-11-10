@@ -1,0 +1,10 @@
+Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7TIMEOUT: 25

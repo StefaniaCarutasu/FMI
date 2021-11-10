@@ -1,0 +1,985 @@
+Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+2)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 2)]
+Cheie: ggggggd
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+6)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: ggggggd
+
+7)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 7

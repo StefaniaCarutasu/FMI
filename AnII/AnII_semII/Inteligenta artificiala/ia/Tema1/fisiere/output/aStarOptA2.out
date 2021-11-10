@@ -1,0 +1,34 @@
+Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: dgggddd
+
+2)Incuietori: [inc(d, 0), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: gdggggg
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(i, 1), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: gigddgg
+
+4)Incuietori: [inc(d, 0), inc(i, 1), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: gdggggg
+
+5)Incuietori: [inc(d, 0), inc(d, 0), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: didiigg
+
+6)Incuietori: [inc(d, 0), inc(i, 1), inc(d, 0), inc(i, 1), inc(i, 1), inc(d, 0), inc(i, 1)]
+Cheie: dgggddd
+
+7)Incuietori: [inc(d, 0), inc(i, 1), inc(d, 0), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: gdggggg
+
+8)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: gigddgg
+
+9)Incuietori: [inc(d, 0), inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+Cheie: iddgiig
+
+10)Incuietori: [inc(i, 1), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: dgggddd
+
+11)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 16

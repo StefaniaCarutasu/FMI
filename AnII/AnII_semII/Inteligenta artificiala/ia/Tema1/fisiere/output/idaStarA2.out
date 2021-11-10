@@ -1,0 +1,14 @@
+Initial: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+1)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1)]
+Cheie: ggggggd
+
+2)Incuietori: [inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(i, 1), inc(d, 0)]
+Cheie: ddddddg
+Descuierea incuietorii 2 duce la incuiera incuietorii 6
+
+3)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(i, 1)]
+Cheie: ggggggd
+
+4)Incuietori: [inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0), inc(d, 0)]
+
+Cost: 8TIMEOUT: 10
