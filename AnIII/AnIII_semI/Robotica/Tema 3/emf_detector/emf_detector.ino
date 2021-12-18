@@ -64,8 +64,8 @@ void displayNumber(byte digit) {
     digitalWrite(segments[i], digitMatrix[digit][i]);
   }
 
-  buzzerTone = (digit + 1) * 100;
-  tone(buzzerPin, buzzerTone, toneDuration);
+//  buzzerTone = (digit + 1) * 100;
+//  tone(buzzerPin, buzzerTone, toneDuration);
 }
 
 void loop() {
