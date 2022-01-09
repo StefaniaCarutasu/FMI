@@ -1,0 +1,7 @@
+f = open("output.txt", "r")
+i = f.readlines()
+f.close()
+l = list(map(lambda y: y[7:-1], filter(lambda x: ":::::" in x, i)))
+print("read")
+s = set(l)
+print(len(l) == len(s))
