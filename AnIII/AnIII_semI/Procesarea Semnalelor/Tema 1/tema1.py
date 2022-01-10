@@ -5,7 +5,6 @@ import sounddevice as sd
 
 class MusicalNotes:
     def __init__(self, frequency, time_of_view):
-
         self.frequency = frequency
         self.amplitude = 20000
         self.phase = 0
@@ -34,71 +33,73 @@ class MusicalNotes:
         return wav_wave
 
 
-
 # ex1
 
-"""
 musicalNotes = {
-    "DO1": 261.63,
-    "RE": 293.66,
-    "MI": 329.63,
-    "FA": 349.23,
-    "SOL": 392.00,
-    "LA": 440.00,
-    "SI": 493.88,
-    "DO2": 523.25
+    "C3": 130.81,
+    "C3#": 138.59,
+    "D3": 146.83,
+    "D3#": 155.56,
+    "E3": 164.81,
+    "F3": 174.61,
+    "F3#": 185.00,
+    "G3": 196.00,
+    "G3#": 207.65,
+    "A3": 220.00,
+    "A3#": 233.08,
+    "B3": 246.94,
+    "C4": 261.63,
+    "C4#": 277.18,
+    "D4": 293.66,
+    "D4#": 311.13,
+    "E4": 329.63,
+    "F4": 349.23,
+    "F4#": 369.99,
+    "G4": 392.00,
+    "G4#": 415.30,
+    "A4": 440.00,
+    "A4#": 466.16,
+    "B4": 493.88,
+    "C5": 523.25,
+    "C5#": 554.37,
+    "D5": 587.33,
+    "D5#": 622.25,
+    "E5": 659.25,
+    "F5": 698.46,
+    "F5#": 739.99,
+    "G5": 783.99,
+    "G5#": 830.61,
+    "A5": 880.00,
+    "A5#": 932.33,
+    "B5": 987.77,
 }
 
-musicalNotes = {
-    "DO1": 65.41,
-    "RE": 73.42,
-    "MI": 82.41,
-    "FA": 87.31,
-    "SOL": 98.00,
-    "LA": 110.00,
-    "SI": 123.47,
-    "DO2": 130.81
-}
+C4 = MusicalNotes(musicalNotes["C4"], 0.4)
+# DO1.playTone()
 
-"""
+D4 = MusicalNotes(musicalNotes["D4"], 0.4)
+# RE.playTone()
 
-musicalNotes = {
-    "DO1": 130.81,
-    "RE": 146.83,
-    "MI": 164.81,
-    "FA": 174.61,
-    "SOL": 196.00,
-    "LA": 220.00,
-    "SI": 246.94,
-    "DO2": 261.63
-}
+E4 = MusicalNotes(musicalNotes["E4"], 0.4)
+# MI.playTone()
 
-DO1 = MusicalNotes(musicalNotes["DO1"], 0.4)
-#DO1.playTone()
+F4 = MusicalNotes(musicalNotes["F4"], 0.4)
+# FA.playTone()
 
-RE = MusicalNotes(musicalNotes["RE"], 0.4)
-#RE.playTone()
+G4 = MusicalNotes(musicalNotes["G4"], 0.4)
+# SOL.playTone()
 
-MI = MusicalNotes(musicalNotes["MI"], 0.4)
-#MI.playTone()
+A4 = MusicalNotes(musicalNotes["A4"], 0.4)
+# LA.playTone()
 
-FA = MusicalNotes(musicalNotes["FA"], 0.4)
-#FA.playTone()
+B4 = MusicalNotes(musicalNotes["B4"], 0.6)
+# SI.playTone()
 
-SOL = MusicalNotes(musicalNotes["SOL"], 0.4)
-#SOL.playTone()
-
-LA = MusicalNotes(musicalNotes["LA"], 0.4)
-#LA.playTone()
-
-SI = MusicalNotes(musicalNotes["SI"], 0.6)
-#SI.playTone()
-
-DO2 = MusicalNotes(musicalNotes["DO2"], 0.4)
-#DO2.playTone()
+C5 = MusicalNotes(musicalNotes["C5"], 0.4)
+# DO2.playTone()
 
 # ex2
-notes = [FA, SOL, LA, FA, FA, SOL, LA, FA, SOL, LA, SI, SOL, LA, SI]
+notes = [F4, G4, A4, F4, F4, G4, A4, F4, G4, A4, B4, G4, A4, B4]
 song = [note.getTone() for note in notes]
 n = np.concatenate(song, axis=0)
 
@@ -120,11 +121,8 @@ sheet.close()
 
 songToPlay = []
 for r in rows:
-    newNote = MusicalNotes(r[0], r[1])
+    newNote = MusicalNotes(musicalNotes[r[0]], r[1])
     songToPlay.append(newNote.getTone())
 newSong = np.concatenate(songToPlay)
 sd.play(newSong, blocking=True)
 sd.stop()
-
-
-
