@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{76AE04F8-0A54-4ACA-BED8-185A42EA9A74}</ProjectGuid>
+    <ProjectGuid>{B247686A-E236-418F-A99A-4094ABEBE547}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44307</IISExpressSSLPort>
+    <IISExpressSSLPort>44367</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -268,9 +268,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51945</DevelopmentServerPort>
+          <DevelopmentServerPort>57355</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44307/</IISUrl>
+          <IISUrl>https://localhost:44367/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

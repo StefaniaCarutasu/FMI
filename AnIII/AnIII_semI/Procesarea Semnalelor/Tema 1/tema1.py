@@ -2,7 +2,6 @@ import csv
 import numpy as np
 import sounddevice as sd
 
-
 class MusicalNotes:
     def __init__(self, frequency, time_of_view):
         self.frequency = frequency

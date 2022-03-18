@@ -1,10 +1,11 @@
-import cv2
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import misc, ndimage
 from scipy.fft import dctn, idctn
-#import cv2  # video processing
+
+import cv2  # video processing
+
+
 # 1
 Q_jpeg = [
     [16, 11, 10, 16, 24, 40, 51, 61],
@@ -17,10 +18,10 @@ Q_jpeg = [
     [72, 92, 95, 98, 112, 100, 103, 99]
 ]
 
-
 img = misc.ascent()
 
-def to_jpeg(img):
+
+def to_jpeg(img, Q_jpeg):
     imgH = img.shape[0]
     imgW = img.shape[1]
     y_nnz = 0
@@ -39,14 +40,14 @@ def to_jpeg(img):
             y_jpeg_nnz += np.count_nonzero(y_jpeg)
 
             img_jpeg[(h * 8):((h + 1) * 8), (w * 8):((w + 1) * 8)] = x_jpeg
-    """
-    print('Componente în frecvență:' + str(y_nnz) +
-          '\nComponente în frecvență după cuantizare: ' + str(y_jpeg_nnz))
-          """
+
+    # print('Componente în frecvență:' + str(y_nnz) +
+    #       '\nComponente în frecvență după cuantizare: ' + str(y_jpeg_nnz))
 
     return img_jpeg
 
-img_jpeg = to_jpeg(img).astype(np.uint8)
+
+img_jpeg = to_jpeg(img, Q_jpeg).astype(np.uint8)
 plt.imshow(img)
 plt.show()
 plt.imshow(img_jpeg)
@@ -54,6 +55,7 @@ plt.show()
 
 # 2
 img = misc.face()
+
 
 # ITU-R BT.601 conversion
 def rgb_to_ycbcr(R, G, B):
@@ -71,38 +73,49 @@ def ycbcr_to_rgb(Y, Cb, Cr):
 
     return R, G, B
 
-def to_rgb_jpeg(img):
+
+def to_rgb_jpeg(img, Q_jpeg):
     R = img[:, :, 0]
     G = img[:, :, 1]
     B = img[:, :, 2]
 
     Y, Cb, Cr = rgb_to_ycbcr(R, G, B)
-    Y = to_jpeg(Y)
-    Cb = to_jpeg(Cb)
-    Cr = to_jpeg(Cr)
+    Y = to_jpeg(Y, Q_jpeg)
+    Cb = to_jpeg(Cb, Q_jpeg)
+    Cr = to_jpeg(Cr, Q_jpeg)
     R_jpeg, G_jpeg, B_jpeg = ycbcr_to_rgb(Y, Cb, Cr)
     img_jpeg = np.stack([R_jpeg, G_jpeg, B_jpeg], axis=2)
 
     return img_jpeg
 
-img_jpeg = to_rgb_jpeg(img)
+
+img_jpeg = to_rgb_jpeg(img, Q_jpeg)
 plt.imshow(img)
 plt.show()
 plt.imshow(img_jpeg)
 plt.show()
 
 # 3
+target_mse = 1
+quality = 1
+img_jpeg = to_rgb_jpeg(img, quality*np.ceil(np.array(Q_jpeg) / quality))
+quality += 1
+mse = np.mean((img-img_jpeg) ** 2)
 
-user_mse = 0.1
-quality = 50
-mse = float('inf')
-img_jpeg = to_rgb_jpeg(img)
+while mse > target_mse:
+    # used ceil to avoid division by 0
+    img_jpeg = to_rgb_jpeg(img, quality*np.ceil(np.array(Q_jpeg) / quality))
+    quality += 1
+    mse = np.mean((img-img_jpeg) ** 2)
+    print(mse, quality)
 
+plt.imshow(img_jpeg)
+plt.show()
 
 
 # 4
 
-vid = cv2.VideoCapture('bessel.mp4')
+vid = cv2.VideoCapture('horses.mp4')
 
 success = True
 while success:
@@ -112,6 +125,6 @@ while success:
     img_jpeg = to_rgb_jpeg(img)
     img_jpeg = cv2.cvtColor(img_jpeg, cv2.COLOR_RGB2BGR)
 
-    cv2.imshow("img", img_jpeg)
+    cv2.imshow('imagine',img_jpeg)
 
 vid.release()
