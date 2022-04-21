@@ -35,17 +35,19 @@ class FiniteTranslator:
             verifica daca a fost prelucrat intregul string de input si daca s-a ajuns la stare finala
             daca nu s-a ajuns la stare finala este facuta urmatoarea tranzitie din starea curenta in toate starile posibile
         """
-        if stringI == self.lambdaSymbol and self.isFinalState(state):
+
+        if len(stringI) <= 1 and self.isFinalState(state):
             self.outputs.append(stringO)
-        elif stringI != self.lambdaSymbol:
+        elif len(stringI) > 0:
             currentSymbol = stringI[0]
             stringI = stringI[1:]
-            for i in delta[(state, currentSymbol)]:
-                if i[0] != "#":
-                    stringO += i[0]
-                newState = i[1]
+            if delta.get((state, currentSymbol)):
+                for i in delta[(state, currentSymbol)]:
+                    if i[0] != "#":
+                        stringO += i[0]
+                    newState = i[1]
 
-                self.deltaStar(newState, stringI, stringO)
+                    self.deltaStar(newState, stringI, stringO)
 
     def printTranslator(self):
         """
@@ -139,6 +141,7 @@ if __name__ == "__main__":
 
     strings = readStrings()
     for w in strings:
+        # T.deltaStar2(T.s, w)
         T.deltaStar(T.s, w + "#", "")
         print("T({string})=".format(string=w), end='')
         print(T.outputs)
