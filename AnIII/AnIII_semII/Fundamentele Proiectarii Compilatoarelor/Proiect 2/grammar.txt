@@ -1,0 +1,12 @@
+S -> A
+A -> A + C
+A -> A - C
+A -> C
+C -> C * B
+C -> C / B
+C -> B
+B -> ( A )
+B -> - B
+B -> x
+B -> y
+B -> z
