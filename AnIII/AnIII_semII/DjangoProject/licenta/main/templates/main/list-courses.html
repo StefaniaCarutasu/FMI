@@ -1,0 +1,56 @@
+{% extends 'main/base.html'%}
+
+{% block title %}Cursuri{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/list-courses.css' %}"/>
+
+
+<div class="list_courses">
+    <div class='card '>
+        <div class='card-header p-0 position-relative mt-n4 mx-3 z-index-2 '>
+            <div class='card_bg rounded pt-4 pb-3 card-width'>
+                <h4 class='text-capitalize ps-3 text'>Course list</h4>
+            </div>
+        </div>
+        <div class='card-body px-0 pb-2'>
+            <div class='table-responsive p-0'>
+                <table class='table table-hover align-items-center mb-0'>
+                    <thead class='text_header_color'>
+                        <tr>
+                            <th class='text-center'><h4>Nr. Crt.</h4></th>
+                            <th class='text-center'><h4>Tema</h4></th>
+                            <th class='text-center'><h4>Data</h4></th>
+                            <th class='text-center'><h4>Ora de inceput</h4></th>
+                            <th class='text-center'><h4>Durata</h4></th>
+                            <th class='text-center'></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for object in object_list %}
+                        <tr>
+                            <td class='text-center'>{{ forloop.counter }}</td>
+                            <td class='text-center'>{{ object.topic }}</td>
+                            <td class='text-center'>{{ object.date }}</td>
+                            <td class='text-center'> {{ object.startTime }}</td>
+                            <td class='text-center'>{{ object.duration }} ore</td>
+                            <td class='text-center'>
+                                <button class='btn btn-primary'><a href='/display_course/{{object.id}}' class='text_color'>Detalii</a></button>
+                            </td>
+                        </tr>
+                        <!-- If object_list is empty  -->
+                        {% empty %}
+                        <li>No objects yet.</li>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

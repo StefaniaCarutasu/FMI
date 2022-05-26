@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63373868-e865-4328-bd2c-ee8f9470d27a" name="Default Changelist" comment="main">
-      <change afterPath="$PROJECT_DIR$/../Proiect 2/src/grammar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../earleyParser/.idea/earleyParser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/proiect2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grammar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Proiect 2/src/EarleyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proiect 2/src/EarleyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Proiect 2/src/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proiect 2/src/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Proiect 2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proiect 2/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bisonParser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bisonParser/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +28,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="exceleditor.install" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Licenta/licenta" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -75,6 +68,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650967737817</updated>
+      <workItem from="1651774728923" duration="618000" />
+      <workItem from="1651788154306" duration="4000" />
+      <workItem from="1651824864991" duration="4000" />
+      <workItem from="1652079851449" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="main">
       <created>1651250382970</created>
@@ -86,6 +83,9 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -96,7 +96,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main" />
